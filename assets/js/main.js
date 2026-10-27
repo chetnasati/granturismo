@@ -309,59 +309,111 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // 8. Itinerary Quick View Drawer Logic
   const tourItineraries = {
+    'gran-turismo-europa': {
+      title: 'Gran Turismo Europa 2027',
+      subtitle: '9 Days · 8 Nights · Geneva to Saint-Tropez via Furka Pass & Lake Como',
+      distance: '1,500 km across Switzerland, Italy, Monaco & France',
+      fleet: 'Ferrari, Porsche GT, McLaren, Lamborghini, Aston Martin',
+      stays: 'La Réserve Geneva, Grand Hotel Courmayeur, The Chedi Andermatt, Villa d\'Este Como (2 nights), Fairmont Monaco, Byblos Saint-Tropez (2 nights)',
+      dining: 'Lake Geneva Poolside Mingle, Lake Annecy Lunch, The Library at Chedi, Villa d\'Este Michelin Dinners, Nikki Beach Monaco',
+      price: 'Fully Booked · Waitlist Available',
+      days: [
+        { day: 'Day 01', title: 'Arrival in Geneva & Welcome at La Réserve', desc: 'Arrive at the legendary La Réserve hotel on Lake Geneva. Welcome drinks by the pool at 19:00 followed by driver briefing and dinner.' },
+        { day: 'Day 02', title: 'Geneva to Courmayeur via Lake Annecy & La Thuile Pass', desc: 'Depart towards the Alps, stopping for lunch by Lake Annecy before ascending the scenic La Thuile mountain pass into Courmayeur at the foot of Mont Blanc.' },
+        { day: 'Day 03', title: 'Courmayeur to Andermatt via St Bernard & Furka Pass', desc: 'Cross into Switzerland over the Sankt Bernard Pass, lunch in Crans-Montana, and tackle the world-famous switchbacks of the Furka Pass into The Chedi Andermatt.' },
+        { day: 'Day 04', title: 'Andermatt to Lake Como & Villa d\'Este via Susten & Grimsel Passes', desc: 'Morning mountain passes over Susten and Grimsel down to Lake Como for check-in at Villa d\'Este, the world\'s most elegant hotel, for two unforgettable nights.' },
+        { day: 'Day 05', title: 'Villa d\'Este Lake Como Rest Day & Riva Boat Cruise', desc: 'Relax by the floating pool at Villa d\'Este or explore local mountain switchbacks, followed by a private sunset Riva boat excursion on Lake Como.' },
+        { day: 'Day 06', title: 'Lake Como to Monaco via High-Speed Autostrada', desc: 'Sprint south through Italy directly to the Mediterranean coast, arriving at the Fairmont Monaco for sunset cocktails at Nikki Beach.' },
+        { day: 'Day 07', title: 'Monaco to Saint-Tropez via Route Napoléon', desc: 'Traverse the legendary high-speed curves of Route Napoléon before arriving at the iconic Hôtel Byblos in Saint-Tropez for two nights of celebration.' },
+        { day: 'Day 08', title: 'Saint-Tropez Beach Day & Grand Finale Gala', desc: 'Private beach club lunch at Pampelonne, afternoon relaxation, and final Gran Turismo celebratory gala dinner at Byblos.' },
+        { day: 'Day 09', title: 'Farewell Breakfast & Private Concierge Transfers', desc: 'Relaxed breakfast in Saint-Tropez before luxury concierge transfers to Nice Côte d\'Azur airport.' }
+      ]
+    },
+    'gran-turismo-amalfi': {
+      title: 'Gran Turismo Amalfi 2027',
+      subtitle: '7 Days · 6 Nights · Rome to Capri & Amalfi Coast',
+      distance: '1,100 km of Dramatic Mediterranean Sea Cliffs',
+      fleet: 'Supercar Fleet: Ferrari 296 GTB, Ferrari Roma Spider, Porsche 911 GT3, Aston Martin DB12',
+      stays: 'Hotel de Russie (Rome), Caruso Belmond (Ravello), Le Sirenuse (Positano)',
+      dining: 'Private Campania Vineyard Cellars, Michelin Dinners, La Fontelina Capri',
+      price: 'Available · Strictly Limited Roster',
+      days: [
+        { day: 'Day 01', title: 'Rendezvous in Rome & Sunset Welcome', desc: 'Check-in to Hotel de Russie near the Spanish Steps. Welcome aperitivo in the secret garden followed by the season opening driver briefing.' },
+        { day: 'Day 02', title: 'Rome to Gaeta Coastal Mountain Pass', desc: 'Receive the keys to your supercar. Sweep south along scenic coastal highways with lunch overlooking the Tyrrhenian Sea.' },
+        { day: 'Day 03', title: 'Ascending Ravello via Monti Lattari', desc: 'Tackle the exhilarating switchbacks climbing high into the cliffside town of Ravello, checking into the palatial Belmond Hotel Caruso.' },
+        { day: 'Day 04', title: 'Amalfi Coastal Drive to Positano', desc: 'Drive the world\'s most famous coastal road with dedicated rally support, arriving in Positano for cliffside dining at Le Sirenuse.' },
+        { day: 'Day 05', title: 'Private Riva Yacht Day to Capri', desc: 'Board private Riva motor yachts to the Isle of Capri, swimming at Faraglioni rocks with exclusive lunch at La Fontelina.' },
+        { day: 'Day 06', title: 'Grand Finale Gala Dinner at Belmond Caruso', desc: 'Evening Michelin celebration overlooking the infinity pool suspended hundreds of meters above the Mediterranean.' },
+        { day: 'Day 07', title: 'Farewell Breakfast & Concierge Transfers', desc: 'Morning espresso overlooking the sea before private transfers to Naples or Rome airport.' }
+      ]
+    },
+    'gran-turismo-adriatica': {
+      title: 'Gran Turismo Adriatica 2027',
+      subtitle: '9 Days · 8 Nights · Split to Dubrovnik & Montenegro',
+      distance: '1,400 km along the Breathtaking Adriatic Coast Highway',
+      fleet: 'Full Supercar Fleet: Ferrari, Porsche GT, McLaren, Lamborghini',
+      stays: 'Hotel Park Split, Villa Dubrovnik, Regent Porto Montenegro',
+      dining: 'Dalmatian Seafood Cellars, 2-Michelin Dinners, Superyacht Marina Evenings',
+      price: 'Available · Strictly Limited Roster',
+      days: [
+        { day: 'Day 01', title: 'Arrival in Split & Diocletian Palace Welcome', desc: 'Private airport meet & greet. Check-in to Hotel Park and enjoy a sunset welcome reception within the Roman palace walls.' },
+        { day: 'Day 02', title: 'Split to Makarska Riviera Coastal Stages', desc: 'Sweep along the azure waters of the Adriatic Highway with dramatic Biokovo mountain backdrops and seaside lunch.' },
+        { day: 'Day 03', title: 'Grand Arrival at Dubrovnik Citadel', desc: 'Enter Dubrovnik under private escort. Check-in to Villa Dubrovnik overlooking the medieval ramparts of the Old Town.' },
+        { day: 'Day 04', title: 'Dubrovnik Island Cruise & Rest Day', desc: 'Private yacht charter across the Elaphiti Islands, gourmet seafood lunch, and sunset aperitivi on the fortress walls.' },
+        { day: 'Day 05', title: 'Dubrovnik to Kotor Fjord & Montenegro', desc: 'Cross the border into Montenegro, navigating the dramatic fjord switchbacks around the Bay of Kotor into Porto Montenegro.' },
+        { day: 'Day 06', title: 'Lovćen National Park Serpentine Passes', desc: 'Drive the legendary 25 numbered hairpin bends of the Kotor Serpentine with panoramic views over the Adriatic.' },
+        { day: 'Day 07', title: 'Porto Montenegro Marina & Yacht Club', desc: 'Day at leisure in the world-class superyacht marina, luxury boutique shopping, and infinity pool club relaxation.' },
+        { day: 'Day 08', title: 'Celebratory Gala at Regent Porto Montenegro', desc: 'Grand black-tie finale banquet celebrating the drivers and the journey.' },
+        { day: 'Day 09', title: 'Concierge Departures from Tivat Airport', desc: 'Private transfers to Tivat or Dubrovnik airport.' }
+      ]
+    },
+    'gran-turismo-nurburgring': {
+      title: 'Gran Turismo Nürburgring 2027',
+      subtitle: '4 Days · 3 Nights · Nürburgring Nordschleife Closed Circuit',
+      distance: 'Unlimited Track Laps on the 20.8 km Green Hell + Eifel Forest Passes',
+      fleet: 'Track Supercars: Porsche 911 GT3 RS, Ferrari 296 GTB, McLaren 750S',
+      stays: 'Lindner Congress Hotel Nürburgring & Trackside Penthouse Suites',
+      dining: 'Paddock VIP Lounge Hospitality, Devil\'s Diner, Michelin Driver Dinners',
+      price: 'Available · Entry Slots Open',
+      days: [
+        { day: 'Day 01', title: 'Rendezvous at Nürburgring & Technical Briefing', desc: 'Arrive at the Ring. Telemetry installation, driver safety briefings with professional racing instructors, and opening dinner.' },
+        { day: 'Day 02', title: 'Full-Day Closed Nordschleife Track Time', desc: 'Open pitlane access from 08:00 to 17:00 on the world\'s most challenging circuit. One-on-one professional driver telemetry coaching.' },
+        { day: 'Day 03', title: 'Second Track Session & Eifel Forest Rally Run', desc: 'Morning track sessions followed by an afternoon convoy through the exhilarating mountain roads and castles of the Eifel region.' },
+        { day: 'Day 04', title: 'Podium Presentations & Departures', desc: 'Champagne awards ceremony and trophy presentation before afternoon departures.' }
+      ]
+    },
+    'gran-turismo-toscana': {
+      title: 'Gran Turismo Toscana 2027',
+      subtitle: '5 Days · 4 Nights · Florence, Chianti, Siena & Val d\'Orcia',
+      distance: '850 km of Autumn Mille Miglia Tarmac & Cypress Lanes',
+      fleet: 'Ferrari 296 GTB, Aston Martin DB12, Ferrari Roma, Porsche 911',
+      stays: 'Belmond Villa San Michele (Florence), Rosewood Castiglion del Bosco',
+      dining: 'Private Brunello di Montalcino Cellar Buyouts, 3-Michelin Enoteca Pinchiorri',
+      price: 'Available · Strictly Limited to 15 Supercars',
+      days: [
+        { day: 'Day 01', title: 'Florence Welcome at Belmond Villa San Michele', desc: 'Private transfers to Belmond Villa San Michele overlooking the Renaissance skyline of Florence. Sunset cocktails on the terrace.' },
+        { day: 'Day 02', title: 'Chianti Classico Winding Vineyard Stages', desc: 'Drive through Greve in Chianti and Siena along the ancient cobblestone squares and sweeping vineyard roads into Castiglion del Bosco.' },
+        { day: 'Day 03', title: 'Val d\'Orcia Golden Cypress Run & Brunello Tasting', desc: 'Open-top cruising through Pienza and Montalcino, with private cellar buyouts and Brunello di Montalcino tastings.' },
+        { day: 'Day 04', title: 'Castiglion del Bosco Estate Day & Gala Banquet', desc: 'Truffle hunting, private spa, and celebratory Tuscan harvest banquet with vintage wine pairings.' },
+        { day: 'Day 05', title: 'Farewell Breakfast & Concierge Transfers', desc: 'Relaxed breakfast overlooking the rolling hills before private transfers to Florence or Rome airport.' }
+      ]
+    },
     'dolomites-supercar': {
-      title: 'Dolomites & Italian Lakes Supercar Tour',
-      subtitle: '7 Days · 6 Nights · Milan to Venice via Stelvio & Lake Como',
-      distance: '1,450 km of Iconic Alpine & Lakeside Passes',
-      fleet: 'Full Rotation: Ferrari 296 GTB, Porsche 911 GT3 RS, McLaren 750S, Aston Martin DB12',
-      stays: 'Grand Hotel Tremezzo (Lake Como), Rosa Alpina (Dolomites), Aman Venice',
+      title: 'Gran Turismo Europa 2027',
+      subtitle: '9 Days · 8 Nights · Geneva to Saint-Tropez via Furka Pass & Lake Como',
+      distance: '1,500 km across Switzerland, Italy, Monaco & France',
+      fleet: 'Ferrari, Porsche GT, McLaren, Lamborghini, Aston Martin',
+      stays: 'La Réserve Geneva, Grand Hotel Courmayeur, The Chedi Andermatt, Villa d\'Este Como, Byblos Saint-Tropez',
       dining: '3x Michelin-Starred Dinners & Private Vineyard Cellars',
-      price: 'From €18,500 per guest (Twin-share)',
+      price: 'Fully Booked · Waitlist Available',
       days: [
-        { day: 'Day 01', title: 'Arrival in Milan & Private Transfer to Lake Como', desc: 'Settle into Grand Hotel Tremezzo with private Riva motorboat transfer, followed by champagne welcome reception and briefing.' },
-        { day: 'Day 02', title: 'Lake Como to Bormio via Stelvio Ascent', desc: 'Take the keys to your first supercar. Ascend the legendary 48 switchbacks of the Stelvio Pass with private support vehicle.' },
-        { day: 'Day 03', title: 'Dolomite Passes & Passo Giau', desc: 'Car rotation: Pilot the Ferrari 296 through Passo Pordoi, Sella Pass, and Passo Falzarego surrounded by towering limestone peaks.' },
-        { day: 'Day 04', title: 'Cortina d’Ampezzo Rest & Helicopter Excursion', desc: 'Relax at Forestis or take a private helicopter tour over the Tre Cime di Lavaredo, followed by private spa treatments.' },
-        { day: 'Day 05', title: 'Val Gardena to Verona Historic Wine Country', desc: 'Car rotation: Experience the Aston Martin DB12 down through Trento into the Valpolicella wine region for exclusive Amarone tasting.' },
-        { day: 'Day 06', title: 'Grand Finale Run into Venice Lagoon', desc: 'Final morning drive along Lake Garda, returning the fleet, followed by private water taxi to Aman Venice and celebratory gala dinner.' },
-        { day: 'Day 07', title: 'Farewell & Private Concierge Transfers', desc: 'Breakfast overlooking the Grand Canal before private water taxi and airport departures.' }
-      ]
-    },
-    'monaco-f1-grand-tour': {
-      title: 'European Supercar Tour & Monaco GP F1',
-      subtitle: '9 Days · 8 Nights · Zurich to Monte Carlo via Furka Pass',
-      distance: '1,680 km + 3 Days Trackside Superyacht Hospitality',
-      fleet: 'Full Rotation across the entire GranTurismo Supercar Fleet',
-      stays: 'The Chedi Andermatt, Four Seasons Hotel des Bergues Geneva, Hotel de Paris Monte-Carlo',
-      dining: 'Private Yacht Catering, Alain Ducasse at Hôtel de Paris, Amber Lounge VIP',
-      price: 'From €26,800 per guest (Twin-share)',
-      days: [
-        { day: 'Day 01', title: 'Rendezvous in Zurich & Swiss Alpine Welcome', desc: 'Private airport meet & greet. Transfer to The Chedi Andermatt for fleet induction and welcome dinner.' },
-        { day: 'Day 02', title: 'Furka, Grimsel & Susten Triple Pass Run', desc: 'Traverse the world-renowned Swiss Alpine triumvirate featured in James Bond Goldfinger, rotating cars between scenic viewpoints.' },
-        { day: 'Day 03', title: 'Lake Geneva & Route Napoléon Descent', desc: 'Sweep into France via the Haute-Savoie and along the high-speed curves of Route Napoléon.' },
-        { day: 'Day 04', title: 'Arrival in Monte Carlo Harbour', desc: 'Descend into Monaco. Check-in to Hôtel de Paris and board our 45m private superyacht moored trackside at Port Hercule.' },
-        { day: 'Day 05', title: 'F1 Saturday Qualifying from Superyacht', desc: 'Full open bar, gourmet dining, F1 driver appearances, and pristine views of the Harbour chicane and swimming pool section.' },
-        { day: 'Day 06', title: 'Monaco Grand Prix Race Day', desc: 'Feel the thunder of 20 Formula 1 cars meters from our yacht deck. Evening VIP Amber Lounge after-party celebration.' },
-        { day: 'Day 07-09', title: 'French Riviera Coastal Relax & Departure', desc: 'Private yacht cruise to Saint-Tropez, relaxed Michelin dining, and private transfers to Nice Côte d’Azur airport.' }
-      ]
-    },
-    'tuscany-chianti-grand-tour': {
-      title: 'Tuscany & Amalfi Coastal Splendour',
-      subtitle: '8 Days · 7 Nights · Florence to Ravello',
-      distance: '1,320 km of Tuscan Cypress Lanes & Amalfi Cliff Roads',
-      fleet: 'Ferrari 296 GTB, Ferrari Roma Spider, Aston Martin DB12, Porsche 911',
-      stays: 'Belmond Villa San Michele (Florence), Rosewood Castiglion del Bosco, Caruso Belmond (Ravello)',
-      dining: 'Private Cellar Dinners at Antinori, 3-Michelin Enoteca Pinchiorri, Le Sirenuse Positano',
-      price: 'From €19,400 per guest (Twin-share)',
-      days: [
-        { day: 'Day 01', title: 'Florence Private Welcome', desc: 'Private transfers to Belmond Villa San Michele overlooking Florence. Sunset cocktails on the terrace.' },
-        { day: 'Day 02', title: 'Chianti Hills & Mille Miglia Historic Route', desc: 'Drive through Greve in Chianti and Siena along the ancient cobblestone squares and sweeping vineyard roads.' },
-        { day: 'Day 03', title: 'Val d’Orcia Cypress Drives', desc: 'Car rotation: Open-top cruising through Pienza and Montalcino, with private private Brunello wine tasting.' },
-        { day: 'Day 04', title: 'Castiglion del Bosco Estate Day', desc: 'Truffle hunting, private championship golf, or bespoke spa experiences across the 5,000-acre private estate.' },
-        { day: 'Day 05', title: 'Southern Run to Amalfi Coast', desc: 'Drive south towards the Sorrento Peninsula and descend into the world-famous cliffside roads of the Amalfi Coast.' },
-        { day: 'Day 06', title: 'Ravello to Positano & Private Yacht Day', desc: 'Board a private 50ft Frauscher yacht to Capri and the Blue Grotto, dining at La Fontelina.' },
-        { day: 'Day 07', title: 'Farewell Gala Dinner at Caruso Belmond', desc: 'Celebratory Michelin dining with breathtaking infinity pool views high above the Mediterranean.' },
-        { day: 'Day 08', title: 'Concierge Departure from Naples', desc: 'Private luxury transfer to Naples or Rome airport.' }
+        { day: 'Day 01', title: 'Arrival in Geneva & Welcome at La Réserve', desc: 'Welcome drinks by the pool at 19:00 followed by driver briefing and dinner.' },
+        { day: 'Day 02', title: 'Geneva to Courmayeur via Lake Annecy', desc: 'Depart towards the Alps, stopping for lunch by Lake Annecy before ascending La Thuile pass into Courmayeur.' },
+        { day: 'Day 03', title: 'Courmayeur to Andermatt via Furka Pass', desc: 'Cross into Switzerland over St Bernard Pass, lunch in Crans-Montana, and tackle the famous Furka Pass into The Chedi.' },
+        { day: 'Day 04', title: 'Andermatt to Lake Como & Villa d\'Este', desc: 'Drive over Susten and Grimsel passes towards Lake Como for check-in at the iconic Villa d\'Este.' },
+        { day: 'Day 05', title: 'Villa d\'Este Lake Como Rest Day', desc: 'Relax by the floating pool at Villa d\'Este or explore local mountain roads with private Riva boat cruise.' },
+        { day: 'Day 06', title: 'Lake Como to Monaco', desc: 'Sprint south through Italy directly to the Mediterranean coast, arriving at Fairmont Monaco.' },
+        { day: 'Day 07', title: 'Monaco to Saint-Tropez via Route Napoléon', desc: 'Traverse the legendary high-speed curves of Route Napoléon before arriving at Hôtel Byblos in Saint-Tropez.' }
       ]
     }
   };
