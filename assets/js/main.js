@@ -83,6 +83,21 @@ document.addEventListener('DOMContentLoaded', () => {
   mobileMenuToggle?.addEventListener('click', openMobileNav);
   mobileDrawerClose?.forEach(btn => btn.addEventListener('click', closeMobileNav));
 
+  mobileDrawer?.addEventListener('click', (e) => {
+    if (e.target === mobileDrawer) {
+      closeMobileNav();
+    }
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      closeMobileNav();
+      if (typeof closeDrawer === 'function') closeDrawer();
+      document.querySelectorAll('.modal-backdrop').forEach(m => m.classList.remove('is-active'));
+      document.body.style.overflow = '';
+    }
+  });
+
   // 4. Destination & Tour Filter Tabs
   const filterBtns = document.querySelectorAll('[data-filter]');
   const tourCards = document.querySelectorAll('[data-tour-region]');

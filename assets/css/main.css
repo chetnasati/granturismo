@@ -608,7 +608,7 @@ img, video {
 
 .cards-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
   gap: 28px;
 }
 
@@ -993,6 +993,50 @@ img, video {
 }
 
 /* ==========================================================================
+   Mobile Navigation Drawer (Full-Featured Sliding Navigation)
+   ========================================================================== */
+
+#mobile-nav-drawer {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.65);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 2100;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+#mobile-nav-drawer.is-active {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+#mobile-nav-drawer .mobile-drawer-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 320px;
+  max-width: 86vw;
+  background-color: var(--color-white);
+  transform: translateX(-100%);
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  box-shadow: 12px 0 32px rgba(0,0,0,0.2);
+}
+
+#mobile-nav-drawer.is-active .mobile-drawer-content {
+  transform: translateX(0);
+}
+
+/* ==========================================================================
    Responsive Adaptations
    ========================================================================== */
 
@@ -1014,8 +1058,18 @@ img, video {
 @media (max-width: 768px) {
   :root {
     --header-height: 80px;
+    --header-compact-height: 68px;
   }
   
+  body {
+    overflow-x: hidden;
+  }
+
+  /* Prevent automatic iOS Safari zoom-in on input focus */
+  input, select, textarea {
+    font-size: 16px !important;
+  }
+
   .footer-grid {
     grid-template-columns: 1fr;
     gap: 32px;
@@ -1029,5 +1083,57 @@ img, video {
   
   .hero-controls {
     display: none;
+  }
+
+  .drawer-panel {
+    width: 100vw;
+  }
+}
+
+@media (max-width: 640px) {
+  :root {
+    --header-height: 74px;
+    --header-compact-height: 64px;
+  }
+
+  .brand-logo-img {
+    height: 52px;
+  }
+
+  .header-wrapper.scrolled .brand-logo-img {
+    height: 44px;
+  }
+
+  .hero-section {
+    min-height: 540px;
+    height: calc(100svh - var(--header-height));
+  }
+
+  .hero-title {
+    font-size: clamp(2.1rem, 8vw, 3rem);
+    margin-bottom: 16px;
+  }
+
+  .hero-subtitle {
+    font-size: 0.95rem;
+    margin-bottom: 28px;
+  }
+
+  .btn {
+    padding: 13px 24px;
+    font-size: 12px;
+  }
+
+  .cards-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .editorial-intro {
+    padding: 60px 0 50px;
+  }
+
+  .editorial-heading {
+    font-size: clamp(1.8rem, 6vw, 2.5rem);
   }
 }
