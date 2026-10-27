@@ -1,0 +1,1330 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Gran Turismo Events | The Art of Driving</title>
+  <meta name="description" content="Gran Turismo Events curates extraordinary driving experiences on exceptional roads and iconic circuits for those who live to drive. Driven by passion since 2002.">
+  
+  <!-- Favicon / Logo -->
+  <link rel="icon" type="image/png" href="assets/images/granturismo-crest.png">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'brand-red': '#C31A21',
+            'brand-red-dark': '#981016',
+            'charcoal': {
+              900: '#111111',
+              800: '#1a1a1a',
+              700: '#262626',
+              600: '#404040',
+              500: '#666666',
+              200: '#E5E5E5',
+              100: '#F4F4F4'
+            },
+            'taupe': '#958E83',
+            'linen': '#F6F4F0',
+            'off-white': '#FAFAF8',
+          },
+          fontFamily: {
+            'apris': ['Apris', 'Cormorant Garamond', 'Georgia', 'serif'],
+            'pp-neue-montreal': ['PP Neue Montreal', 'Plus Jakarta Sans', '-apple-system', 'sans-serif'],
+          },
+          letterSpacing: {
+            'luxury': '0.14em',
+            'ultra': '0.22em'
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="assets/css/main.css">
+</head>
+<body class="font-pp-neue-montreal bg-white text-charcoal-900 selection:bg-charcoal-900 selection:text-white">
+
+  <!-- ======================================================================
+       HEADER & NAVIGATION (Minimal · Refined · Exclusive · Timeless)
+       ====================================================================== -->
+  <div class="header-wrapper" data-header-wrapper>
+    <header class="header-main">
+      <div class="max-w-7xl mx-auto w-full px-4 sm:px-8 header-inner">
+        
+        <!-- Left: Mobile Toggle & Desktop Links (Experiences | Calendar | Our Story) -->
+        <div class="flex-1 flex items-center justify-start gap-6 sm:gap-8">
+          <button type="button" class="lg:hidden flex items-center gap-2 text-charcoal-900 focus:outline-none" data-mobile-menu-toggle aria-label="Toggle Navigation">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M4 6h16M4 12h16M4 18h16"/>
+            </svg>
+            <span class="text-xs tracking-wider uppercase font-medium hidden sm:inline">Menu</span>
+          </button>
+
+          <!-- Desktop Left Links -->
+          <nav class="hidden lg:flex items-center gap-7">
+            <a href="#experiences" class="nav-link font-medium tracking-wide">Experiences</a>
+            <a href="#calendar" class="nav-link font-medium tracking-wide">Calendar</a>
+            <a href="#shoppe" class="nav-link font-medium tracking-wide flex items-center gap-1.5">
+              <span>Le Shoppe</span>
+              <span class="text-[9px] px-1 py-0.5 bg-brand-red text-white font-bold rounded-xs tracking-normal uppercase">New</span>
+            </a>
+          </nav>
+        </div>
+
+        <!-- Center: Brand Logo (Exact Uploaded Lockup) -->
+        <div class="flex-none flex justify-center py-1">
+          <a href="index.html" class="brand-logo-container flex items-center justify-center" aria-label="Gran Turismo Events">
+            <img src="assets/images/granturismo-logo.png" alt="Gran Turismo Events — Like There Is No Tomorrow" class="brand-logo-img transition-transform duration-300 hover:scale-105 drop-shadow-sm">
+          </a>
+        </div>
+
+        <!-- Right: Desktop Links (Our Story | Journal | Contact) & Enquire CTA -->
+        <div class="flex-1 flex items-center justify-end gap-6 sm:gap-7">
+          <nav class="hidden lg:flex items-center gap-7">
+            <a href="#our-story" class="nav-link font-medium tracking-wide">Our Story</a>
+            <a href="#journal" class="nav-link font-medium tracking-wide">Journal</a>
+            <a href="#contact" class="nav-link font-medium tracking-wide">Contact</a>
+          </nav>
+
+          <a href="#contact" class="btn btn-primary btn-sm hidden sm:inline-flex">
+            Enquire
+          </a>
+        </div>
+
+      </div>
+    </header>
+  </div>
+
+  <!-- ======================================================================
+       1. HOMEPAGE HERO (The Art of Driving)
+       ====================================================================== -->
+  <section class="hero-section" id="hero">
+    <!-- Full-screen video / cinematic supercar alpine tour -->
+    <video id="hero-video" class="hero-video-bg" autoplay loop muted playsinline poster="https://www.huntermoss.com/wp-content/uploads/2026/03/home-page-hero-web.jpg">
+      <source src="https://s3.us-east-1.amazonaws.com/www.huntermoss.com/videos/hm-home-banner-video-2025.mp4" type="video/mp4">
+    </video>
+
+    <!-- Dark gradient overlay for contrast -->
+    <div class="hero-overlay"></div>
+
+    <!-- Hero Content -->
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span class="w-1.5 h-1.5 rounded-full bg-brand-red animate-pulse"></span>
+        GRAN TURISMO EVENTS · 2026 / 2027 CALENDAR
+      </div>
+
+      <h1 class="font-apris hero-title">
+        The Art of Driving.
+      </h1>
+
+      <p class="hero-subtitle font-pp-neue-montreal">
+        Exceptional roads. Iconic circuits. Extraordinary experiences.
+      </p>
+
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+        <a href="#experiences" class="btn btn-white w-full sm:w-auto">
+          Explore Experiences
+        </a>
+        <a href="#calendar" class="btn btn-outline-white w-full sm:w-auto">
+          View 2026 Calendar
+        </a>
+      </div>
+    </div>
+
+    <!-- Video Audio & Playback Controls -->
+    <div class="hero-controls">
+      <button type="button" id="video-play-btn" class="hero-ctrl-btn" title="Pause Video" aria-label="Pause Video">
+        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+          <rect x="6" y="4" width="4" height="16"/>
+          <rect x="14" y="4" width="4" height="16"/>
+        </svg>
+      </button>
+      <button type="button" id="video-mute-btn" class="hero-ctrl-btn" title="Unmute Video" aria-label="Toggle Sound">
+        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v2.21l2.45 2.45c.03-.2.05-.41.05-.63zm2.5 0c0 .94-.2 1.82-.54 2.64l1.51 1.51C20.63 14.91 21 13.5 21 12c0-4.28-2.99-7.86-7-8.77v2.06c2.89.86 5 3.54 5 6.71zM4.27 3L3 4.27 7.73 9H3v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Scroll Indicator -->
+    <div class="hero-scroll-indicator">
+      <span>DISCOVER</span>
+      <svg class="w-4 h-4 animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M19 14l-7 7m0 0l-7-7m7 7V3"/>
+      </svg>
+    </div>
+  </section>
+
+  <!-- ======================================================================
+       EDITORIAL INTRO STATEMENT (Clean · Minimal · Architectural)
+       ====================================================================== -->
+  <section class="editorial-intro">
+    <div class="max-w-7xl mx-auto px-4 sm:px-8">
+      <div class="max-w-4xl">
+        <p class="editorial-subtitle">MINIMAL · REFINED · EXCLUSIVE · TIMELESS</p>
+        
+        <h2 class="font-apris editorial-heading">
+          For Those Who Live to Drive
+        </h2>
+
+        <p class="editorial-text">
+          Gran Turismo Events creates immersive, peerless driving journeys across the world’s most exhilarating alpine passes, legendary racing circuits, and dramatic coastlines. Since 2002, we have united a private community of supercar owners with uncompromising hospitality, peerless route design, and pre-emptive concierge service.
+        </p>
+
+        <p class="editorial-text">
+          From full fleet rotation grand tours across the Swiss Alps to private superyacht hospitality at the Monaco Grand Prix, each departure is strictly capped to preserve camaraderie, safety, and exclusivity. Let the cars, destinations, and experiences speak for themselves.
+        </p>
+
+        <div class="flex flex-wrap items-center gap-4 pt-4">
+          <a href="#calendar" class="btn btn-primary">
+            Explore 2026 Calendar
+          </a>
+          <a href="#our-story" class="btn btn-outline">
+            Our Story
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================================================================
+       EXPERIENCES (Signature Driving Formats)
+       ====================================================================== -->
+  <section class="py-24 bg-off-white border-t border-charcoal-200" id="experiences">
+    <div class="max-w-7xl mx-auto px-4 sm:px-8">
+      
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-16">
+        <div>
+          <span class="text-xs font-semibold tracking-luxury uppercase text-taupe block mb-2">CURATED FORMATS</span>
+          <h2 class="font-apris text-3xl sm:text-5xl text-charcoal-900">Elevated Driving Experiences</h2>
+        </div>
+        <p class="text-sm text-charcoal-500 max-w-md mt-4 md:mt-0 leading-relaxed">
+          Small-group supercar rallies, private circuit access, and tailor-made grand touring crafted without compromise.
+        </p>
+      </div>
+
+      <div class="cards-grid">
+        <!-- 01: Supercar Driving Tours -->
+        <article class="experience-card">
+          <div class="card-img-wrapper">
+            <img src="https://www.huntermoss.com/wp-content/uploads/2025/11/Supercar-Driving-Tours-scaled.jpg" alt="Supercar Driving Tours">
+            <span class="card-tag">Strictly 12 Cars Max</span>
+          </div>
+          <div class="card-content">
+            <h3 class="font-apris card-title">Supercar Driving Tours</h3>
+            <p class="card-description">
+              Rotate through a handpicked fleet of the latest release Ferraris, Porsches, McLarens, and Aston Martins every driving day. Complete with lead-car pace setting, dedicated luggage transport, and encrypted private comms.
+            </p>
+            <div class="card-footer">
+              <span>Alps · Dolomites · Riviera</span>
+              <a href="#calendar" class="hover:text-brand-red inline-flex items-center gap-1 group">
+                <span>View Tours</span>
+                <span class="transform group-hover:translate-x-1 transition-transform">→</span>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- 02: Iconic Circuit & Grand Prix Hospitality -->
+        <article class="experience-card">
+          <div class="card-img-wrapper">
+            <img src="https://www.huntermoss.com/wp-content/uploads/2026/03/Menu_F1-Hospitality-Motorsport-Packages.jpg" alt="Iconic Circuit & Grand Prix Hospitality">
+            <span class="card-tag">VIP Motorsport Access</span>
+          </div>
+          <div class="card-content">
+            <h3 class="font-apris card-title">Iconic Circuits &amp; Grand Prix</h3>
+            <p class="card-description">
+              Trackside harbor mooring aboard a private 45m superyacht at the Monaco Grand Prix, exclusive Drivers Club access at Goodwood Festival of Speed, and private track days at Spa-Francorchamps and Nürburgring Nordschleife.
+            </p>
+            <div class="card-footer">
+              <span>Monaco · Goodwood · Spa</span>
+              <a href="#calendar" class="hover:text-brand-red inline-flex items-center gap-1 group">
+                <span>Explore Access</span>
+                <span class="transform group-hover:translate-x-1 transition-transform">→</span>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- 03: Tailor-Made Private Odysseys -->
+        <article class="experience-card">
+          <div class="card-img-wrapper">
+            <img src="https://www.huntermoss.com/wp-content/uploads/2026/03/Menu_Tailor-Made-Holidays.jpg" alt="Tailor-Made Private Journeys">
+            <span class="card-tag">100% Bespoke</span>
+          </div>
+          <div class="card-content">
+            <h3 class="font-apris card-title">Tailor-Made Private Journeys</h3>
+            <p class="card-description">
+              For discerning collectors, private families, and close groups of friends seeking an entirely bespoke itinerary. We coordinate private aviation, palatial estate buyouts, private track closures, and custom supercar rosters.
+            </p>
+            <div class="card-footer">
+              <span>Worldwide Locations</span>
+              <a href="#contact" class="hover:text-brand-red inline-flex items-center gap-1 group">
+                <span>Inquire Bespoke</span>
+                <span class="transform group-hover:translate-x-1 transition-transform">→</span>
+              </a>
+            </div>
+          </div>
+        </article>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ======================================================================
+       3. UPCOMING EVENTS (Curated Driving Experiences)
+       ====================================================================== -->
+  <section class="py-24 bg-white border-t border-charcoal-200" id="calendar">
+    <div class="max-w-7xl mx-auto px-4 sm:px-8">
+      
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+        <div>
+          <span class="text-xs font-semibold tracking-luxury uppercase text-brand-red block mb-2">UPCOMING EVENTS</span>
+          <h2 class="font-apris text-3xl sm:text-5xl text-charcoal-900">Curated Driving Experiences.</h2>
+          <p class="text-sm text-charcoal-500 max-w-xl mt-3 leading-relaxed">
+            Discover exceptional journeys crafted for those who live to drive.
+          </p>
+        </div>
+        <div class="mt-4 md:mt-0">
+          <a href="#beyond-the-drive" class="btn btn-outline">
+            Explore the Calendar
+          </a>
+        </div>
+      </div>
+
+      <!-- Spacious, Image-Led Event Cards Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        
+        <!-- Event Card 1: Gran Turismo Europa -->
+        <article class="group bg-off-white border border-charcoal-200 overflow-hidden flex flex-col justify-between hover:border-black transition-all">
+          <div>
+            <div class="w-full h-64 overflow-hidden relative">
+              <img src="https://images.unsplash.com/photo-1502784444187-359ac186c5bb?auto=format&fit=crop&w=800&q=80" alt="Gran Turismo Europa" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+              <span class="absolute top-4 right-4 text-[10px] uppercase font-bold tracking-widest px-2.5 py-1 bg-black text-white">
+                Limited to 12 Cars
+              </span>
+            </div>
+            <div class="p-6">
+              <div class="flex items-center justify-between text-xs font-medium text-taupe uppercase tracking-wider mb-2">
+                <span>Swiss &amp; Austrian Alps</span>
+                <span class="text-charcoal-900 font-semibold">June 14 – 21, 2026</span>
+              </div>
+              <h3 class="font-apris text-2xl text-charcoal-900 mb-2 group-hover:text-brand-red transition-colors">
+                Gran Turismo Europa
+              </h3>
+              <p class="text-xs text-charcoal-500 leading-relaxed mb-4">
+                Susten, Grimsel, Furka, and Klausen passes. High-alpine technical switchbacks paired with private châteaux stays and unrestrained Autobahn stretches.
+              </p>
+            </div>
+          </div>
+          <div class="px-6 pb-6 pt-4 border-t border-charcoal-200 flex items-center justify-between text-xs">
+            <span class="font-medium text-charcoal-700">7 Days · 6 Nights</span>
+            <button type="button" data-itinerary-id="dolomites-supercar" class="text-brand-red font-semibold hover:underline inline-flex items-center gap-1">
+              <span>View Itinerary</span>
+              <span>→</span>
+            </button>
+          </div>
+        </article>
+
+        <!-- Event Card 2: Gran Turismo Riviera -->
+        <article class="group bg-off-white border border-charcoal-200 overflow-hidden flex flex-col justify-between hover:border-black transition-all">
+          <div>
+            <div class="w-full h-64 overflow-hidden relative">
+              <img src="https://images.unsplash.com/photo-1542282088-72c9c27ed0cd?auto=format&fit=crop&w=800&q=80" alt="Gran Turismo Riviera" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+              <span class="absolute top-4 right-4 text-[10px] uppercase font-bold tracking-widest px-2.5 py-1 bg-brand-red text-white">
+                Waitlist Only
+              </span>
+            </div>
+            <div class="p-6">
+              <div class="flex items-center justify-between text-xs font-medium text-taupe uppercase tracking-wider mb-2">
+                <span>Monaco &amp; French Riviera</span>
+                <span class="text-charcoal-900 font-semibold">May 20 – 25, 2026</span>
+              </div>
+              <h3 class="font-apris text-2xl text-charcoal-900 mb-2 group-hover:text-brand-red transition-colors">
+                Gran Turismo Riviera &amp; Monaco GP
+              </h3>
+              <p class="text-xs text-charcoal-500 leading-relaxed mb-4">
+                Route Napoléon supercar convoy followed by 3 days of private trackside superyacht hospitality in Port Hercule for the Monaco Grand Prix.
+              </p>
+            </div>
+          </div>
+          <div class="px-6 pb-6 pt-4 border-t border-charcoal-200 flex items-center justify-between text-xs">
+            <span class="font-medium text-charcoal-700">6 Days · 5 Nights</span>
+            <button type="button" data-itinerary-id="monaco-f1-grand-tour" class="text-brand-red font-semibold hover:underline inline-flex items-center gap-1">
+              <span>View Itinerary</span>
+              <span>→</span>
+            </button>
+          </div>
+        </article>
+
+        <!-- Event Card 3: Gran Turismo Nürburgring & Spa -->
+        <article class="group bg-off-white border border-charcoal-200 overflow-hidden flex flex-col justify-between hover:border-black transition-all">
+          <div>
+            <div class="w-full h-64 overflow-hidden relative">
+              <img src="https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?auto=format&fit=crop&w=800&q=80" alt="Gran Turismo Nürburgring & Spa" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+              <span class="absolute top-4 right-4 text-[10px] uppercase font-bold tracking-widest px-2.5 py-1 bg-amber-600 text-white">
+                4 Slots Left
+              </span>
+            </div>
+            <div class="p-6">
+              <div class="flex items-center justify-between text-xs font-medium text-taupe uppercase tracking-wider mb-2">
+                <span>Legendary Circuits</span>
+                <span class="text-charcoal-900 font-semibold">July 08 – 13, 2026</span>
+              </div>
+              <h3 class="font-apris text-2xl text-charcoal-900 mb-2 group-hover:text-brand-red transition-colors">
+                Gran Turismo Nürburgring &amp; Spa
+              </h3>
+              <p class="text-xs text-charcoal-500 leading-relaxed mb-4">
+                Private circuit track days at Spa-Francorchamps and the Nürburgring Nordschleife with pro instructor telemetry, followed by Eifel mountain passes.
+              </p>
+            </div>
+          </div>
+          <div class="px-6 pb-6 pt-4 border-t border-charcoal-200 flex items-center justify-between text-xs">
+            <span class="font-medium text-charcoal-700">6 Days · 5 Nights</span>
+            <a href="#contact" class="text-brand-red font-semibold hover:underline inline-flex items-center gap-1">
+              <span>Inquire Slots</span>
+              <span>→</span>
+            </a>
+          </div>
+        </article>
+
+        <!-- Event Card 4: Gran Turismo Italia -->
+        <article class="group bg-off-white border border-charcoal-200 overflow-hidden flex flex-col justify-between hover:border-black transition-all">
+          <div>
+            <div class="w-full h-64 overflow-hidden relative">
+              <img src="https://images.unsplash.com/photo-1533105079780-92b9be482077?auto=format&fit=crop&w=800&q=80" alt="Gran Turismo Italia" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+              <span class="absolute top-4 right-4 text-[10px] uppercase font-bold tracking-widest px-2.5 py-1 bg-emerald-600 text-white">
+                Confirmed
+              </span>
+            </div>
+            <div class="p-6">
+              <div class="flex items-center justify-between text-xs font-medium text-taupe uppercase tracking-wider mb-2">
+                <span>Dolomites &amp; Tuscany</span>
+                <span class="text-charcoal-900 font-semibold">Sept 12 – 19, 2026</span>
+              </div>
+              <h3 class="font-apris text-2xl text-charcoal-900 mb-2 group-hover:text-brand-red transition-colors">
+                Gran Turismo Italia
+              </h3>
+              <p class="text-xs text-charcoal-500 leading-relaxed mb-4">
+                Passo Giau and Sella Ronda in the Italian Dolomites, descending south through Chianti vineyard lanes with private palace accommodations and cellar buyouts.
+              </p>
+            </div>
+          </div>
+          <div class="px-6 pb-6 pt-4 border-t border-charcoal-200 flex items-center justify-between text-xs">
+            <span class="font-medium text-charcoal-700">8 Days · 7 Nights</span>
+            <button type="button" data-itinerary-id="tuscany-chianti-grand-tour" class="text-brand-red font-semibold hover:underline inline-flex items-center gap-1">
+              <span>View Itinerary</span>
+              <span>→</span>
+            </button>
+          </div>
+        </article>
+
+        <!-- Event Card 5: Gran Turismo Scandinavia -->
+        <article class="group bg-off-white border border-charcoal-200 overflow-hidden flex flex-col justify-between hover:border-black transition-all">
+          <div>
+            <div class="w-full h-64 overflow-hidden relative">
+              <img src="https://images.unsplash.com/photo-1506197603052-3cc9c3a201bd?auto=format&fit=crop&w=800&q=80" alt="Gran Turismo Scandinavia" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+              <span class="absolute top-4 right-4 text-[10px] uppercase font-bold tracking-widest px-2.5 py-1 bg-black text-white">
+                Limited to 10 Cars
+              </span>
+            </div>
+            <div class="p-6">
+              <div class="flex items-center justify-between text-xs font-medium text-taupe uppercase tracking-wider mb-2">
+                <span>Norway &amp; Sweden</span>
+                <span class="text-charcoal-900 font-semibold">August 18 – 24, 2026</span>
+              </div>
+              <h3 class="font-apris text-2xl text-charcoal-900 mb-2 group-hover:text-brand-red transition-colors">
+                Gran Turismo Scandinavia
+              </h3>
+              <p class="text-xs text-charcoal-500 leading-relaxed mb-4">
+                The famed Atlantic Ocean Road, Trollstigen mountain pass, and the dramatic Norwegian fjords. Waterfront luxury lodges and midnight-sun driving sessions.
+              </p>
+            </div>
+          </div>
+          <div class="px-6 pb-6 pt-4 border-t border-charcoal-200 flex items-center justify-between text-xs">
+            <span class="font-medium text-charcoal-700">7 Days · 6 Nights</span>
+            <a href="#contact" class="text-brand-red font-semibold hover:underline inline-flex items-center gap-1">
+              <span>Inquire Journey</span>
+              <span>→</span>
+            </a>
+          </div>
+        </article>
+
+        <!-- Event Card 6: Gran Turismo Highlands -->
+        <article class="group bg-off-white border border-charcoal-200 overflow-hidden flex flex-col justify-between hover:border-black transition-all">
+          <div>
+            <div class="w-full h-64 overflow-hidden relative">
+              <img src="https://images.unsplash.com/photo-1516483638261-f4dbaf036963?auto=format&fit=crop&w=800&q=80" alt="Gran Turismo Highlands" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+              <span class="absolute top-4 right-4 text-[10px] uppercase font-bold tracking-widest px-2.5 py-1 bg-emerald-600 text-white">
+                Available
+              </span>
+            </div>
+            <div class="p-6">
+              <div class="flex items-center justify-between text-xs font-medium text-taupe uppercase tracking-wider mb-2">
+                <span>Scottish Highlands</span>
+                <span class="text-charcoal-900 font-semibold">October 02 – 08, 2026</span>
+              </div>
+              <h3 class="font-apris text-2xl text-charcoal-900 mb-2 group-hover:text-brand-red transition-colors">
+                Gran Turismo Highlands
+              </h3>
+              <p class="text-xs text-charcoal-500 leading-relaxed mb-4">
+                North Coast 500 through Applecross Pass and coastal cliffs. Private buyouts of historic baronial castles, single-malt tastings, and helicopter transfers.
+              </p>
+            </div>
+          </div>
+          <div class="px-6 pb-6 pt-4 border-t border-charcoal-200 flex items-center justify-between text-xs">
+            <span class="font-medium text-charcoal-700">7 Days · 6 Nights</span>
+            <a href="#contact" class="text-brand-red font-semibold hover:underline inline-flex items-center gap-1">
+              <span>Inquire Journey</span>
+              <span>→</span>
+            </a>
+          </div>
+        </article>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ======================================================================
+       4. EVENT DETAIL / SHOWCASE (Beyond the Drive)
+       ====================================================================== -->
+  <section class="py-24 bg-linen border-t border-charcoal-200" id="beyond-the-drive">
+    <div class="max-w-7xl mx-auto px-4 sm:px-8">
+      
+      <!-- Section Header -->
+      <div class="max-w-3xl mb-16">
+        <span class="text-xs font-semibold tracking-luxury uppercase text-brand-red block mb-2">THE SIGNATURE JOURNEY</span>
+        <h2 class="font-apris text-3xl sm:text-5xl text-charcoal-900 mb-4">Beyond the Drive.</h2>
+        <p class="text-base text-charcoal-600 leading-relaxed">
+          Remarkable routes. Exceptional hospitality. Unforgettable moments.
+        </p>
+      </div>
+
+      <!-- Large Showcase Feature Layout -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center mb-16">
+        
+        <!-- Large Destination Photography -->
+        <div class="lg:col-span-7">
+          <div class="relative overflow-hidden border border-charcoal-300 shadow-md">
+            <img src="https://images.unsplash.com/photo-1533105079780-92b9be482077?auto=format&fit=crop&w=1200&q=85" alt="Alpine Mountain Pass" class="w-full h-[460px] object-cover">
+            <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent p-6 text-white">
+              <span class="text-[10px] uppercase font-bold tracking-widest text-brand-red block mb-1">FEATURED ITINERARY</span>
+              <h3 class="font-apris text-2xl sm:text-3xl">Gran Turismo Europa: Alpine Passes &amp; Dolomites</h3>
+              <p class="text-xs text-white/70 mt-1">1,450 km · 6 Alpine Stages · Lake Como to Venice Lagoon</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Elegant Itinerary Breakdown & Key Journey Details -->
+        <div class="lg:col-span-5 space-y-6">
+          <div class="bg-white p-8 border border-charcoal-200 shadow-sm space-y-6">
+            <h4 class="font-apris text-2xl text-charcoal-900">Key Journey Details</h4>
+            
+            <div class="space-y-4 text-xs">
+              <div class="flex items-start justify-between border-b border-charcoal-100 pb-3">
+                <span class="font-semibold text-charcoal-900 uppercase tracking-wider">Scouted Route</span>
+                <span class="text-charcoal-600 text-right">1,450 km of technical mountain tarmac</span>
+              </div>
+              <div class="flex items-start justify-between border-b border-charcoal-100 pb-3">
+                <span class="font-semibold text-charcoal-900 uppercase tracking-wider">Supercar Rotation</span>
+                <span class="text-charcoal-600 text-right">Ferrari 296, GT3 RS, McLaren 750S, DB12</span>
+              </div>
+              <div class="flex items-start justify-between border-b border-charcoal-100 pb-3">
+                <span class="font-semibold text-charcoal-900 uppercase tracking-wider">Palatial Stays</span>
+                <span class="text-charcoal-600 text-right">Grand Hotel Tremezzo, Forestis, Aman Venice</span>
+              </div>
+              <div class="flex items-start justify-between border-b border-charcoal-100 pb-3">
+                <span class="font-semibold text-charcoal-900 uppercase tracking-wider">Gastronomy</span>
+                <span class="text-charcoal-600 text-right">3x Michelin-Starred dinners &amp; private cellars</span>
+              </div>
+              <div class="flex items-start justify-between pb-1">
+                <span class="font-semibold text-charcoal-900 uppercase tracking-wider">Pacing &amp; Safety</span>
+                <span class="text-charcoal-600 text-right">Lead rally directors &amp; luggage van service</span>
+              </div>
+            </div>
+
+            <!-- Clear Enquiry CTA -->
+            <div class="pt-4 border-t border-charcoal-200">
+              <a href="#contact" class="btn btn-primary w-full text-center">
+                Enquire About This Event
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ======================================================================
+       LE SHOPPE (The Gran Turismo Drivers Collection from shop.granturismoevents.com)
+       ====================================================================== -->
+  <section class="py-24 bg-white border-t border-charcoal-200" id="shoppe">
+    <div class="max-w-7xl mx-auto px-4 sm:px-8">
+      
+      <!-- Section Header -->
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-16">
+        <div>
+          <div class="flex items-center gap-2 mb-2">
+            <span class="text-xs font-semibold tracking-luxury uppercase text-brand-red">THE DRIVERS COLLECTION</span>
+            <span class="text-[9px] px-1.5 py-0.5 bg-black text-white font-mono uppercase tracking-wider font-bold">OFFICIAL GEAR</span>
+          </div>
+          <h2 class="font-apris text-3xl sm:text-5xl text-charcoal-900">Le Shoppe</h2>
+          <p class="text-sm text-charcoal-500 max-w-xl mt-3 leading-relaxed">
+            Curated pieces from <strong class="text-charcoal-900">shop.granturismoevents.com</strong> for our family of supercar owners. Limited-edition timepieces, custom-embroidered driver apparel, and handcrafted leather travel accessories.
+          </p>
+        </div>
+        <div class="mt-4 md:mt-0">
+          <a href="https://shop.granturismoevents.com" target="_blank" rel="noopener noreferrer" class="btn btn-outline inline-flex items-center gap-2">
+            <span>Visit Full Store (shop.granturismoevents.com)</span>
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Shoppe Products Grid -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        
+        <!-- Product 1: Gran Turismo Watch Black / Metal -->
+        <article class="group bg-off-white border border-charcoal-200 flex flex-col justify-between hover:border-black transition-all">
+          <div>
+            <div class="w-full h-64 overflow-hidden relative bg-white flex items-center justify-center p-4">
+              <img src="https://cdn.shopify.com/s/files/1/0255/7948/7279/products/DSC0350.jpg?v=1608671186" alt="Gran Turismo Watch Black Metal" class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500">
+              <span class="absolute top-3 right-3 text-[10px] uppercase font-bold tracking-widest px-2 py-0.5 bg-brand-red text-white">
+                50 Units Only
+              </span>
+            </div>
+            <div class="p-6">
+              <div class="text-[11px] font-semibold text-taupe uppercase tracking-wider mb-1">SJÖÖ &amp; SANDSTRÖM COLLABORATION</div>
+              <h3 class="font-apris text-xl text-charcoal-900 mb-2 group-hover:text-brand-red transition-colors">
+                Gran Turismo Watch · Black / Metal
+              </h3>
+              <p class="text-xs text-charcoal-500 leading-relaxed mb-4">
+                Stainless steel 40mm case, sapphire crystal tested to 100m, Swiss quartz movement, solid link bracelet. Limited numbered edition of 50 pieces.
+              </p>
+            </div>
+          </div>
+          <div class="px-6 pb-6 pt-4 border-t border-charcoal-200 flex items-center justify-between text-xs">
+            <span class="font-bold text-charcoal-900 text-sm">€880,00</span>
+            <a href="https://shop.granturismoevents.com/products/gran-turismo-watch-black-metal" target="_blank" rel="noopener noreferrer" class="text-brand-red font-semibold hover:underline inline-flex items-center gap-1">
+              <span>View Product</span>
+              <span>→</span>
+            </a>
+          </div>
+        </article>
+
+        <!-- Product 2: Gran Turismo Watch White / Leather -->
+        <article class="group bg-off-white border border-charcoal-200 flex flex-col justify-between hover:border-black transition-all">
+          <div>
+            <div class="w-full h-64 overflow-hidden relative bg-white flex items-center justify-center p-4">
+              <img src="https://cdn.shopify.com/s/files/1/0255/7948/7279/products/DSC0356.jpg?v=1608671186" alt="Gran Turismo Watch White Leather" class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500">
+              <span class="absolute top-3 right-3 text-[10px] uppercase font-bold tracking-widest px-2 py-0.5 bg-black text-white">
+                Limited Series
+              </span>
+            </div>
+            <div class="p-6">
+              <div class="text-[11px] font-semibold text-taupe uppercase tracking-wider mb-1">SWISS QUARTZ ENGINE</div>
+              <h3 class="font-apris text-xl text-charcoal-900 mb-2 group-hover:text-brand-red transition-colors">
+                Gran Turismo Watch · White / Leather
+              </h3>
+              <p class="text-xs text-charcoal-500 leading-relaxed mb-4">
+                Classic rally perforated racing strap in genuine Italian leather, clean white dial, stainless steel 40mm case with presentation gift box.
+              </p>
+            </div>
+          </div>
+          <div class="px-6 pb-6 pt-4 border-t border-charcoal-200 flex items-center justify-between text-xs">
+            <span class="font-bold text-charcoal-900 text-sm">€770,00</span>
+            <a href="https://shop.granturismoevents.com/products/gran-turismo-watch-white-leather" target="_blank" rel="noopener noreferrer" class="text-brand-red font-semibold hover:underline inline-flex items-center gap-1">
+              <span>View Product</span>
+              <span>→</span>
+            </a>
+          </div>
+        </article>
+
+        <!-- Product 3: Official Driver Jacket -->
+        <article class="group bg-off-white border border-charcoal-200 flex flex-col justify-between hover:border-black transition-all">
+          <div>
+            <div class="w-full h-64 overflow-hidden relative bg-white flex items-center justify-center p-4">
+              <img src="https://images.unsplash.com/photo-1551028719-00167b16eac5?auto=format&fit=crop&w=600&q=80" alt="Official Driver Jacket" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+              <span class="absolute top-3 right-3 text-[10px] uppercase font-bold tracking-widest px-2 py-0.5 bg-brand-red text-white">
+                Personalized
+              </span>
+            </div>
+            <div class="p-6">
+              <div class="text-[11px] font-semibold text-taupe uppercase tracking-wider mb-1">BESPOKE EMBROIDERY</div>
+              <h3 class="font-apris text-xl text-charcoal-900 mb-2 group-hover:text-brand-red transition-colors">
+                Gran Turismo Driver Jacket
+              </h3>
+              <p class="text-xs text-charcoal-500 leading-relaxed mb-4">
+                Technical windproof shell featuring Gran Turismo crest and partner patches. Custom embroidered with driver's name and nationality flag.
+              </p>
+            </div>
+          </div>
+          <div class="px-6 pb-6 pt-4 border-t border-charcoal-200 flex items-center justify-between text-xs">
+            <span class="font-bold text-charcoal-900 text-sm">€230,00</span>
+            <a href="https://shop.granturismoevents.com/products/gran-turismo-driver-jacket" target="_blank" rel="noopener noreferrer" class="text-brand-red font-semibold hover:underline inline-flex items-center gap-1">
+              <span>Order Jacket</span>
+              <span>→</span>
+            </a>
+          </div>
+        </article>
+
+        <!-- Product 4: Halda Space Race Polonia (Piece Unique) -->
+        <article class="group bg-off-white border border-charcoal-200 flex flex-col justify-between hover:border-black transition-all">
+          <div>
+            <div class="w-full h-64 overflow-hidden relative bg-white flex items-center justify-center p-4">
+              <img src="https://cdn.shopify.com/s/files/1/0255/7948/7279/products/Polonia6.jpg?v=1617625127" alt="Halda Space Race Polonia" class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500">
+              <span class="absolute top-3 right-3 text-[10px] uppercase font-bold tracking-widest px-2 py-0.5 bg-black text-white">
+                Piece Unique
+              </span>
+            </div>
+            <div class="p-6">
+              <div class="text-[11px] font-semibold text-taupe uppercase tracking-wider mb-1">HAUTE HORLOGERIE</div>
+              <h3 class="font-apris text-xl text-charcoal-900 mb-2 group-hover:text-brand-red transition-colors">
+                Halda Space Race Polonia
+              </h3>
+              <p class="text-xs text-charcoal-500 leading-relaxed mb-4">
+                Limited to 1 unit worldwide. Interchangeable Race Pilot digital telemetry module with track catalogue &amp; Svend Andersén mechanical module.
+              </p>
+            </div>
+          </div>
+          <div class="px-6 pb-6 pt-4 border-t border-charcoal-200 flex items-center justify-between text-xs">
+            <span class="font-bold text-charcoal-900 text-sm">€8.800,00</span>
+            <a href="https://shop.granturismoevents.com/products/halda-space-race-polonia" target="_blank" rel="noopener noreferrer" class="text-brand-red font-semibold hover:underline inline-flex items-center gap-1">
+              <span>View Piece</span>
+              <span>→</span>
+            </a>
+          </div>
+        </article>
+
+        <!-- Product 5: Gran Turismo Zip Sweater -->
+        <article class="group bg-off-white border border-charcoal-200 flex flex-col justify-between hover:border-black transition-all">
+          <div>
+            <div class="w-full h-64 overflow-hidden relative bg-white flex items-center justify-center p-4">
+              <img src="https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?auto=format&fit=crop&w=600&q=80" alt="Gran Turismo Zip Sweater" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            </div>
+            <div class="p-6">
+              <div class="text-[11px] font-semibold text-taupe uppercase tracking-wider mb-1">ITALIAN DRIVER KNIT</div>
+              <h3 class="font-apris text-xl text-charcoal-900 mb-2 group-hover:text-brand-red transition-colors">
+                Gran Turismo Zip Sweater
+              </h3>
+              <p class="text-xs text-charcoal-500 leading-relaxed mb-4">
+                Heavyweight premium knit with quarter-zip standing collar and subtle embroidered lion crest on chest. Engineered for open-top cockpit driving.
+              </p>
+            </div>
+          </div>
+          <div class="px-6 pb-6 pt-4 border-t border-charcoal-200 flex items-center justify-between text-xs">
+            <span class="font-bold text-charcoal-900 text-sm">€190,00</span>
+            <a href="https://shop.granturismoevents.com" target="_blank" rel="noopener noreferrer" class="text-brand-red font-semibold hover:underline inline-flex items-center gap-1">
+              <span>View in Shop</span>
+              <span>→</span>
+            </a>
+          </div>
+        </article>
+
+        <!-- Product 6: Gran Turismo Driver Polo -->
+        <article class="group bg-off-white border border-charcoal-200 flex flex-col justify-between hover:border-black transition-all">
+          <div>
+            <div class="w-full h-64 overflow-hidden relative bg-white flex items-center justify-center p-4">
+              <img src="https://images.unsplash.com/photo-1581655353564-df123a1eb820?auto=format&fit=crop&w=600&q=80" alt="Gran Turismo Driver Polo" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            </div>
+            <div class="p-6">
+              <div class="text-[11px] font-semibold text-taupe uppercase tracking-wider mb-1">PIQUE COTTON</div>
+              <h3 class="font-apris text-xl text-charcoal-900 mb-2 group-hover:text-brand-red transition-colors">
+                Gran Turismo Driver Polo
+              </h3>
+              <p class="text-xs text-charcoal-500 leading-relaxed mb-4">
+                Tailored athletic cut in breathable double-pique cotton. Mother-of-pearl buttons and embroidered carmine red shield crest.
+              </p>
+            </div>
+          </div>
+          <div class="px-6 pb-6 pt-4 border-t border-charcoal-200 flex items-center justify-between text-xs">
+            <span class="font-bold text-charcoal-900 text-sm">€90,00</span>
+            <a href="https://shop.granturismoevents.com" target="_blank" rel="noopener noreferrer" class="text-brand-red font-semibold hover:underline inline-flex items-center gap-1">
+              <span>View in Shop</span>
+              <span>→</span>
+            </a>
+          </div>
+        </article>
+
+        <!-- Product 7: Driver Wallet & Leather Travel Goods -->
+        <article class="group bg-off-white border border-charcoal-200 flex flex-col justify-between hover:border-black transition-all">
+          <div>
+            <div class="w-full h-64 overflow-hidden relative bg-white flex items-center justify-center p-4">
+              <img src="https://images.unsplash.com/photo-1627123424574-724758594e93?auto=format&fit=crop&w=600&q=80" alt="Driver Leather Goods" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            </div>
+            <div class="p-6">
+              <div class="text-[11px] font-semibold text-taupe uppercase tracking-wider mb-1">HAND-STITCHED ITALIAN LEATHER</div>
+              <h3 class="font-apris text-xl text-charcoal-900 mb-2 group-hover:text-brand-red transition-colors">
+                Leather Driver Wallet &amp; Key Fob
+              </h3>
+              <p class="text-xs text-charcoal-500 leading-relaxed mb-4">
+                Supple Tuscan calfskin with contrast saddle stitching, RFID protection, passport slot, and embossed Gran Turismo lion emblem.
+              </p>
+            </div>
+          </div>
+          <div class="px-6 pb-6 pt-4 border-t border-charcoal-200 flex items-center justify-between text-xs">
+            <span class="font-bold text-charcoal-900 text-sm">€120,00</span>
+            <a href="https://shop.granturismoevents.com" target="_blank" rel="noopener noreferrer" class="text-brand-red font-semibold hover:underline inline-flex items-center gap-1">
+              <span>View in Shop</span>
+              <span>→</span>
+            </a>
+          </div>
+        </article>
+
+        <!-- Product 8: Gran Turismo Driver Cap -->
+        <article class="group bg-off-white border border-charcoal-200 flex flex-col justify-between hover:border-black transition-all">
+          <div>
+            <div class="w-full h-64 overflow-hidden relative bg-white flex items-center justify-center p-4">
+              <img src="https://images.unsplash.com/photo-1588850561407-ed78c282e89b?auto=format&fit=crop&w=600&q=80" alt="Gran Turismo Driver Cap" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            </div>
+            <div class="p-6">
+              <div class="text-[11px] font-semibold text-taupe uppercase tracking-wider mb-1">MOTORSPORT TWILL</div>
+              <h3 class="font-apris text-xl text-charcoal-900 mb-2 group-hover:text-brand-red transition-colors">
+                Official Gran Turismo Driver Cap
+              </h3>
+              <p class="text-xs text-charcoal-500 leading-relaxed mb-4">
+                Classic structured six-panel cotton twill with high-density 3D embroidered red lion crest and adjustable metal clasp.
+              </p>
+            </div>
+          </div>
+          <div class="px-6 pb-6 pt-4 border-t border-charcoal-200 flex items-center justify-between text-xs">
+            <span class="font-bold text-charcoal-900 text-sm">€35,00</span>
+            <a href="https://shop.granturismoevents.com" target="_blank" rel="noopener noreferrer" class="text-brand-red font-semibold hover:underline inline-flex items-center gap-1">
+              <span>View in Shop</span>
+              <span>→</span>
+            </a>
+          </div>
+        </article>
+
+      </div>
+
+      <!-- Shoppe Footer Note -->
+      <div class="mt-12 p-6 bg-off-white border border-charcoal-200 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs">
+        <div class="flex items-center gap-3">
+          <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+          <span class="text-charcoal-700">Official merchandise dispatch from Geneva. Verified driver collection access &amp; custom sizing available.</span>
+        </div>
+        <a href="mailto:shop@granturismo.org" class="font-semibold text-charcoal-900 hover:text-brand-red whitespace-nowrap">
+          Order Inquiries: shop@granturismo.org →
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ======================================================================
+       5. ABOUT US (Driven by Passion. Since 2002.)
+       ====================================================================== -->
+  <section class="py-24 bg-white border-t border-charcoal-200" id="our-story">
+    <div class="max-w-7xl mx-auto px-4 sm:px-8">
+      
+      <!-- Section Header -->
+      <div class="max-w-3xl mb-16">
+        <span class="text-xs font-semibold tracking-luxury uppercase text-brand-red block mb-2">HERITAGE &amp; COMMUNITY</span>
+        <h2 class="font-apris text-3xl sm:text-5xl text-charcoal-900 mb-4">Driven by Passion. Since 2002.</h2>
+        <p class="text-base text-charcoal-600 leading-relaxed">
+          Bringing together a community of supercar enthusiasts through extraordinary driving experiences.
+        </p>
+      </div>
+
+      <!-- Narrative & Authentic Automotive Photography Grid -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center mb-16">
+        
+        <div class="lg:col-span-6 space-y-6 text-sm text-charcoal-700 leading-relaxed">
+          <p>
+            Gran Turismo Events was born in Geneva in 2002 with a singular, unwavering philosophy: supercars are built to be driven on the world's most magnificent roads, in the company of people who share the same infectious devotion.
+          </p>
+          <p>
+            What began twenty-four years ago as an intimate road rally across the Swiss passes has matured into the world’s benchmark private automotive fraternity. We do not organize public parades or commercial spectacles; we curate private, deeply authentic driving adventures where lifelong friendships are forged over mountain switchbacks and Michelin tables.
+          </p>
+          <p>
+            Every departure is restricted to an exclusive group of drivers. Every route is personally scouted turn by turn. Every accommodation is chosen for genuine character and discretion. This is our standard—driven by passion, like there is no tomorrow.
+          </p>
+
+          <div class="pt-4">
+            <a href="#contact" class="btn btn-outline">
+              Our Story
+            </a>
+          </div>
+        </div>
+
+        <div class="lg:col-span-6">
+          <div class="grid grid-cols-2 gap-4">
+            <div class="overflow-hidden border border-charcoal-200">
+              <img src="https://images.unsplash.com/photo-1592198084033-aade902d1aae?auto=format&fit=crop&w=600&q=80" alt="Supercars in the Alps" class="w-full h-56 object-cover hover:scale-105 transition-transform duration-500">
+            </div>
+            <div class="overflow-hidden border border-charcoal-200 mt-6">
+              <img src="https://images.unsplash.com/photo-1614162692292-7ac56d7f7f1e?auto=format&fit=crop&w=600&q=80" alt="Porsche GT3 RS on Pass" class="w-full h-56 object-cover hover:scale-105 transition-transform duration-500">
+            </div>
+            <div class="overflow-hidden border border-charcoal-200">
+              <img src="https://images.unsplash.com/photo-1542282088-72c9c27ed0cd?auto=format&fit=crop&w=600&q=80" alt="Monaco Port Hercule" class="w-full h-56 object-cover hover:scale-105 transition-transform duration-500">
+            </div>
+            <div class="overflow-hidden border border-charcoal-200 mt-6">
+              <img src="https://images.unsplash.com/photo-1502784444187-359ac186c5bb?auto=format&fit=crop&w=600&q=80" alt="Swiss Alpine Road" class="w-full h-56 object-cover hover:scale-105 transition-transform duration-500">
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Subtle Brand Statistics (Minimal & Timeless) -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 border-t border-b border-charcoal-200 py-12">
+        <div class="text-center sm:text-left">
+          <div class="font-apris text-4xl sm:text-5xl text-charcoal-900 mb-1">2002</div>
+          <p class="text-xs font-medium uppercase tracking-wider text-taupe">Founded in Geneva</p>
+        </div>
+        <div class="text-center sm:text-left">
+          <div class="font-apris text-4xl sm:text-5xl text-charcoal-900 mb-1">24+</div>
+          <p class="text-xs font-medium uppercase tracking-wider text-taupe">Years of Heritage</p>
+        </div>
+        <div class="text-center sm:text-left">
+          <div class="font-apris text-4xl sm:text-5xl text-charcoal-900 mb-1">180+</div>
+          <p class="text-xs font-medium uppercase tracking-wider text-taupe">Rallies across 35 Countries</p>
+        </div>
+        <div class="text-center sm:text-left">
+          <div class="font-apris text-4xl sm:text-5xl text-brand-red mb-1">12</div>
+          <p class="text-xs font-medium uppercase tracking-wider text-taupe">Max Cars Per Event</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ======================================================================
+       JOURNAL (Editorial Perspectives from the Road)
+       ====================================================================== -->
+  <section class="py-24 bg-off-white border-t border-charcoal-200" id="journal">
+    <div class="max-w-7xl mx-auto px-4 sm:px-8">
+      
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+        <div>
+          <span class="text-xs font-semibold tracking-luxury uppercase text-taupe block mb-2">EDITORIAL DISPATCHES</span>
+          <h2 class="font-apris text-3xl sm:text-5xl text-charcoal-900">The Journal</h2>
+        </div>
+        <p class="text-sm text-charcoal-500 max-w-md mt-4 md:mt-0 leading-relaxed">
+          Chronicles of horsepower, mountain passes, and private retreats curated by our travel authors.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <!-- Story 1 -->
+        <article class="group cursor-pointer">
+          <div class="w-full h-64 overflow-hidden border border-charcoal-200 mb-4 bg-linen">
+            <img src="https://images.unsplash.com/photo-1502784444187-359ac186c5bb?auto=format&fit=crop&w=800&q=80" alt="Furka Pass at Dawn" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+          </div>
+          <div class="text-[11px] font-semibold tracking-wider uppercase text-taupe mb-1">THE SWISS ALPS · 6 MIN READ</div>
+          <h3 class="font-apris text-2xl text-charcoal-900 group-hover:text-brand-red transition-colors mb-2">
+            Furka Pass at Dawn: The Awakening of 819 Maranello Horses
+          </h3>
+          <p class="text-xs text-charcoal-500 line-clamp-3 leading-relaxed">
+            The cold morning mist clings to the Rhone Glacier. We push the start button of the Ferrari 296 GTB, the twin-turbo V6 echoing off granite peaks as switchback 12 reveals an empty road.
+          </p>
+        </article>
+
+        <!-- Story 2 -->
+        <article class="group cursor-pointer">
+          <div class="w-full h-64 overflow-hidden border border-charcoal-200 mb-4 bg-linen">
+            <img src="https://images.unsplash.com/photo-1542282088-72c9c27ed0cd?auto=format&fit=crop&w=800&q=80" alt="Monaco Harbor Yacht" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+          </div>
+          <div class="text-[11px] font-semibold tracking-wider uppercase text-taupe mb-1">MONACO · 5 MIN READ</div>
+          <h3 class="font-apris text-2xl text-charcoal-900 group-hover:text-brand-red transition-colors mb-2">
+            Twilight at Port Hercule: Supercars, Riva Launches &amp; Amber Lounge
+          </h3>
+          <p class="text-xs text-charcoal-500 line-clamp-3 leading-relaxed">
+            As the chequered flag falls over the swimming pool chicane, the harbour transforms into an aristocratic celebration beneath the palace lights of Monaco-Ville.
+          </p>
+        </article>
+
+        <!-- Story 3 -->
+        <article class="group cursor-pointer">
+          <div class="w-full h-64 overflow-hidden border border-charcoal-200 mb-4 bg-linen">
+            <img src="https://images.unsplash.com/photo-1516483638261-f4dbaf036963?auto=format&fit=crop&w=800&q=80" alt="Tuscany Cypress Drive" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+          </div>
+          <div class="text-[11px] font-semibold tracking-wider uppercase text-taupe mb-1">TUSCANY · 4 MIN READ</div>
+          <h3 class="font-apris text-2xl text-charcoal-900 group-hover:text-brand-red transition-colors mb-2">
+            Cypress Shadows: Chasing the Golden Hour Across Val d'Orcia
+          </h3>
+          <p class="text-xs text-charcoal-500 line-clamp-3 leading-relaxed">
+            Driving an Aston Martin DB12 through rolling terracotta hills, guided only by the scent of pine and private cellar appointments waiting at Rosewood Castiglion del Bosco.
+          </p>
+        </article>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ======================================================================
+       6. CONTACT SECTION (Begin Your Journey)
+       ====================================================================== -->
+  <section class="py-24 bg-white border-t border-charcoal-200" id="contact">
+    <div class="max-w-7xl mx-auto px-4 sm:px-8">
+      
+      <!-- Section Header -->
+      <div class="max-w-2xl mx-auto text-center mb-16">
+        <span class="text-xs font-semibold tracking-luxury uppercase text-brand-red block mb-2">PRIVATE CONCIERGE</span>
+        <h2 class="font-apris text-3xl sm:text-5xl text-charcoal-900 mb-4">Begin Your Journey.</h2>
+        <p class="text-sm text-charcoal-600 leading-relaxed">
+          Every exceptional experience begins with a conversation.
+        </p>
+      </div>
+
+      <!-- Minimal Enquiry Form & Organized Concierge Contact Info -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 max-w-5xl mx-auto items-start">
+        
+        <!-- Clean Enquiry Form -->
+        <div class="lg:col-span-7 bg-off-white p-8 sm:p-10 border border-charcoal-200">
+          <h3 class="font-apris text-2xl text-charcoal-900 mb-2">Personal Enquiry</h3>
+          <p class="text-xs text-charcoal-500 mb-8 leading-relaxed">
+            Complete the details below and a Senior Travel Director will connect with you directly within two business hours.
+          </p>
+
+          <form data-ajax-form class="space-y-4">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label class="block text-xs font-medium uppercase tracking-wider text-charcoal-700 mb-1">First Name *</label>
+                <input type="text" required class="w-full border border-charcoal-200 px-3.5 py-2.5 text-sm bg-white focus:outline-none focus:border-black transition-colors" placeholder="Alexander">
+              </div>
+              <div>
+                <label class="block text-xs font-medium uppercase tracking-wider text-charcoal-700 mb-1">Last Name *</label>
+                <input type="text" required class="w-full border border-charcoal-200 px-3.5 py-2.5 text-sm bg-white focus:outline-none focus:border-black transition-colors" placeholder="Vanderbilt">
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label class="block text-xs font-medium uppercase tracking-wider text-charcoal-700 mb-1">Email Address *</label>
+                <input type="email" required class="w-full border border-charcoal-200 px-3.5 py-2.5 text-sm bg-white focus:outline-none focus:border-black transition-colors" placeholder="alexander@domain.com">
+              </div>
+              <div>
+                <label class="block text-xs font-medium uppercase tracking-wider text-charcoal-700 mb-1">Telephone / WhatsApp *</label>
+                <input type="tel" required class="w-full border border-charcoal-200 px-3.5 py-2.5 text-sm bg-white focus:outline-none focus:border-black transition-colors" placeholder="+41 79 123 4567">
+              </div>
+            </div>
+
+            <div>
+              <label class="block text-xs font-medium uppercase tracking-wider text-charcoal-700 mb-1">Event or Destination of Interest</label>
+              <select class="w-full border border-charcoal-200 px-3.5 py-2.5 text-sm bg-white focus:outline-none focus:border-black transition-colors">
+                <option value="europa">Gran Turismo Europa · Swiss &amp; Austrian Alps (June 2026)</option>
+                <option value="riviera">Gran Turismo Riviera &amp; Monaco GP (May 2026)</option>
+                <option value="nurburgring">Gran Turismo Nürburgring &amp; Spa Circuits (July 2026)</option>
+                <option value="italia">Gran Turismo Italia · Dolomites &amp; Tuscany (Sept 2026)</option>
+                <option value="scandinavia">Gran Turismo Scandinavia · Atlantic Road (August 2026)</option>
+                <option value="highlands">Gran Turismo Highlands · Scottish Castles (Oct 2026)</option>
+                <option value="bespoke">Tailor-Made Private Custom Tour</option>
+              </select>
+            </div>
+
+            <div>
+              <label class="block text-xs font-medium uppercase tracking-wider text-charcoal-700 mb-1">Message or Special Preferences</label>
+              <textarea rows="3" class="w-full border border-charcoal-200 px-3.5 py-2.5 text-sm bg-white focus:outline-none focus:border-black transition-colors" placeholder="Tell us about your driving preferences, group size, or timing..."></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary w-full py-3 text-xs uppercase tracking-luxury font-semibold mt-2">
+              Get in Touch
+            </button>
+          </form>
+        </div>
+
+        <!-- Clearly Organized Concierge Info -->
+        <div class="lg:col-span-5 space-y-8 pt-2">
+          
+          <div>
+            <span class="text-xs font-semibold tracking-luxury uppercase text-taupe block mb-1">DIRECT CONCIERGE HOTLINE</span>
+            <a href="tel:+41228191800" class="font-apris text-3xl text-charcoal-900 hover:text-brand-red transition-colors block">
+              +41 22 819 1800
+            </a>
+            <p class="text-xs text-charcoal-500 mt-1">Available 24/7 for prospective drivers &amp; members</p>
+          </div>
+
+          <div class="border-t border-charcoal-200 pt-6">
+            <span class="text-xs font-semibold tracking-luxury uppercase text-taupe block mb-1">PRIVATE CORRESPONDENCE</span>
+            <a href="mailto:concierge@granturismoevents.com" class="font-sans text-sm font-semibold text-charcoal-900 hover:text-brand-red transition-colors">
+              concierge@granturismoevents.com
+            </a>
+          </div>
+
+          <div class="border-t border-charcoal-200 pt-6 space-y-3">
+            <span class="text-xs font-semibold tracking-luxury uppercase text-taupe block mb-2">GLOBAL REPRESENTATION</span>
+            <div class="text-xs text-charcoal-700 space-y-2">
+              <div>
+                <strong class="text-charcoal-900 block font-semibold">Switzerland (Headquarters)</strong>
+                <span class="text-charcoal-500">Quai du Mont-Blanc 19, 1201 Genève</span>
+              </div>
+              <div>
+                <strong class="text-charcoal-900 block font-semibold">Monaco</strong>
+                <span class="text-charcoal-500">7 Boulevard d’Italie, 98000 Monte Carlo</span>
+              </div>
+              <div>
+                <strong class="text-charcoal-900 block font-semibold">United Kingdom</strong>
+                <span class="text-charcoal-500">18 Berkeley Square, Mayfair, London W1J 6BQ</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="border-t border-charcoal-200 pt-6">
+            <div class="p-4 bg-linen border border-charcoal-200 text-xs text-charcoal-600">
+              <span class="font-semibold text-charcoal-900 block mb-1">Private Community Guidelines</span>
+              All Gran Turismo Events are restricted to sports cars and supercars. Participation is subject to confirmation by the rally committee.
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ======================================================================
+       FOOTER (Minimal · Refined · Exclusive · Timeless)
+       ====================================================================== -->
+  <footer class="footer-section">
+    <div class="max-w-7xl mx-auto px-4 sm:px-8">
+      
+      <div class="footer-grid">
+        <!-- Brand & Heritage -->
+        <div>
+          <div class="mb-6">
+            <img src="assets/images/granturismo-logo-white.png" alt="Gran Turismo Events — Like There Is No Tomorrow" class="h-14 w-auto object-contain">
+          </div>
+          <p class="text-xs text-white/60 leading-relaxed max-w-sm mb-6">
+            Curating extraordinary driving experiences on exceptional roads and iconic circuits for those who live to drive. Driven by passion since 2002.
+          </p>
+          <div class="text-xs text-white/40 space-y-1">
+            <p>Switzerland: Quai du Mont-Blanc 19, 1201 Genève</p>
+            <p>Monaco: 7 Boulevard d’Italie, 98000 Monte Carlo</p>
+            <p>United Kingdom: 18 Berkeley Square, Mayfair, London</p>
+          </div>
+        </div>
+
+        <!-- Navigation Links -->
+        <div>
+          <h4 class="footer-col-title">Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="#experiences">Experiences</a></li>
+            <li><a href="#calendar">Calendar</a></li>
+            <li><a href="#beyond-the-drive">Beyond the Drive</a></li>
+            <li><a href="#shoppe">Le Shoppe</a></li>
+            <li><a href="#our-story">Our Story</a></li>
+            <li><a href="#journal">Journal</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- Calendar Highlights -->
+        <div>
+          <h4 class="footer-col-title">2026 Calendar</h4>
+          <ul class="footer-links">
+            <li><a href="#calendar">Gran Turismo Europa (June)</a></li>
+            <li><a href="#calendar">Gran Turismo Riviera &amp; Monaco GP</a></li>
+            <li><a href="#calendar">Gran Turismo Nürburgring &amp; Spa</a></li>
+            <li><a href="#calendar">Gran Turismo Italia (September)</a></li>
+            <li><a href="#calendar">Gran Turismo Scandinavia</a></li>
+            <li><a href="#calendar">Gran Turismo Highlands</a></li>
+          </ul>
+        </div>
+
+        <!-- Concierge Desk -->
+        <div>
+          <h4 class="footer-col-title">Private Concierge</h4>
+          <ul class="footer-links">
+            <li><a href="#contact">Get in Touch</a></li>
+            <li><a href="tel:+41228191800">+41 22 819 1800</a></li>
+            <li><a href="mailto:concierge@granturismoevents.com">concierge@granturismoevents.com</a></li>
+            <li><span class="text-white/40 text-[11px] block mt-2">Like There Is No Tomorrow.</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2002 – 2026 Gran Turismo Events SA. All rights reserved.</p>
+        <div class="footer-legal-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Participation</a>
+          <a href="#">Driver Safety Code</a>
+          <a href="#">Cookie Preferences</a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- ======================================================================
+       MODAL 1: CONCIERGE ENQUIRY POPUP
+       ====================================================================== -->
+  <div class="modal-backdrop" id="modal-concierge">
+    <div class="modal-container">
+      <button type="button" class="modal-close-btn" data-close-modal aria-label="Close Modal">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M6 18L18 6M6 6l12 12"/>
+        </svg>
+      </button>
+
+      <div class="p-8 sm:p-12">
+        <div class="flex items-center gap-2 mb-3">
+          <img src="assets/images/granturismo-crest.png" alt="" class="w-6 h-6 object-contain">
+          <span class="text-xs font-semibold tracking-luxury uppercase text-brand-red">PRIVATE CONCIERGE DESK</span>
+        </div>
+        <h3 class="font-apris text-3xl sm:text-4xl text-charcoal-900 mb-2">Begin Your Journey</h3>
+        <p class="text-xs text-charcoal-500 mb-8 leading-relaxed">
+          Please provide your details below. A dedicated Senior Travel Director will review your preferences and connect with you directly.
+        </p>
+
+        <form data-ajax-form class="space-y-4">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-xs font-medium uppercase tracking-wider text-charcoal-700 mb-1">First Name *</label>
+              <input type="text" required class="w-full border border-charcoal-200 px-3.5 py-2.5 text-sm focus:outline-none focus:border-black transition-colors" placeholder="Alexander">
+            </div>
+            <div>
+              <label class="block text-xs font-medium uppercase tracking-wider text-charcoal-700 mb-1">Last Name *</label>
+              <input type="text" required class="w-full border border-charcoal-200 px-3.5 py-2.5 text-sm focus:outline-none focus:border-black transition-colors" placeholder="Vanderbilt">
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-xs font-medium uppercase tracking-wider text-charcoal-700 mb-1">Email Address *</label>
+              <input type="email" required class="w-full border border-charcoal-200 px-3.5 py-2.5 text-sm focus:outline-none focus:border-black transition-colors" placeholder="alexander@domain.com">
+            </div>
+            <div>
+              <label class="block text-xs font-medium uppercase tracking-wider text-charcoal-700 mb-1">Phone Number (with Country Code) *</label>
+              <input type="tel" required class="w-full border border-charcoal-200 px-3.5 py-2.5 text-sm focus:outline-none focus:border-black transition-colors" placeholder="+41 79 123 4567">
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-xs font-medium uppercase tracking-wider text-charcoal-700 mb-1">Preferred Event or Destination</label>
+            <select class="w-full border border-charcoal-200 px-3.5 py-2.5 text-sm bg-white focus:outline-none focus:border-black transition-colors">
+              <option value="europa">Gran Turismo Europa · Swiss &amp; Austrian Alps (June 2026)</option>
+              <option value="riviera">Gran Turismo Riviera &amp; Monaco GP (May 2026)</option>
+              <option value="nurburgring">Gran Turismo Nürburgring &amp; Spa (July 2026)</option>
+              <option value="italia">Gran Turismo Italia · Dolomites &amp; Tuscany (Sept 2026)</option>
+              <option value="bespoke">Bespoke Custom Journey</option>
+            </select>
+          </div>
+
+          <div>
+            <label class="block text-xs font-medium uppercase tracking-wider text-charcoal-700 mb-1">Special Requirements or Vehicle Information</label>
+            <textarea rows="3" class="w-full border border-charcoal-200 px-3.5 py-2.5 text-sm focus:outline-none focus:border-black transition-colors" placeholder="Supercar preferences, dietary requirements, dates..."></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary w-full py-3.5 mt-2">
+            Submit Private Enquiry
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- ======================================================================
+       DRAWER: DETAILED DAY-BY-DAY ITINERARY SLIDE-OUT
+       ====================================================================== -->
+  <div class="drawer-backdrop" id="drawer-backdrop"></div>
+  <aside class="drawer-panel" id="itinerary-drawer">
+    <div class="p-6 border-b border-charcoal-200 flex items-center justify-between sticky top-0 bg-white z-10">
+      <div class="flex items-center gap-2">
+        <img src="assets/images/granturismo-crest.png" alt="" class="w-5 h-5 object-contain">
+        <span class="text-xs font-semibold tracking-luxury uppercase text-brand-red">JOURNEY DOSSIER</span>
+      </div>
+      <button type="button" data-close-drawer class="p-2 text-charcoal-900 hover:rotate-90 transition-transform">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M6 18L18 6M6 6l12 12"/>
+        </svg>
+      </button>
+    </div>
+
+    <div class="p-8 flex-1 overflow-y-auto">
+      <h3 id="drawer-title" class="font-apris text-3xl text-charcoal-900 mb-2">Gran Turismo Europa</h3>
+      <p id="drawer-subtitle" class="text-xs text-taupe uppercase tracking-wider font-medium mb-6">7 Days · 6 Nights · Milan to Venice via Stelvio</p>
+
+      <div class="bg-off-white border border-charcoal-200 p-4 mb-6 space-y-2 text-xs">
+        <div><strong class="text-charcoal-900">Total Route:</strong> <span id="drawer-distance" class="text-charcoal-600">1,450 km of Iconic Alpine &amp; Lakeside Passes</span></div>
+        <div><strong class="text-charcoal-900">Supercar Rotation:</strong> <span id="drawer-fleet" class="text-charcoal-600">Ferrari 296 GTB, Porsche 911 GT3 RS, McLaren 750S, Aston DB12</span></div>
+        <div><strong class="text-charcoal-900">Luxury Stays:</strong> <span id="drawer-stays" class="text-charcoal-600">Grand Hotel Tremezzo, Forestis Dolomites, Aman Venice</span></div>
+        <div><strong class="text-charcoal-900">Gastronomy:</strong> <span id="drawer-dining" class="text-charcoal-600">3x Michelin-Starred Dinners &amp; Private Cellars</span></div>
+      </div>
+
+      <h4 class="font-apris text-xl text-charcoal-900 mb-4">Day-by-Day Schedule</h4>
+      <div id="drawer-days-list" class="space-y-4 mb-8">
+        <!-- Rendered dynamically by main.js -->
+      </div>
+
+      <div class="pt-4 border-t border-charcoal-200">
+        <button type="button" data-open-modal="modal-concierge" class="btn btn-primary w-full">
+          Enquire About This Event
+        </button>
+      </div>
+    </div>
+  </aside>
+
+  <!-- ======================================================================
+       MOBILE NAVIGATION DRAWER (Experiences | Calendar | Our Story | Journal | Contact)
+       ====================================================================== -->
+  <div class="fixed inset-0 bg-black/60 z-[2000] opacity-0 pointer-events-none transition-opacity duration-300" id="mobile-nav-drawer">
+    <div class="absolute top-0 left-0 bottom-0 w-[320px] bg-white flex flex-col p-6 overflow-y-auto">
+      
+      <div class="flex items-center justify-between pb-6 border-b border-charcoal-200">
+        <div class="flex items-center">
+          <img src="assets/images/granturismo-logo.png" alt="Gran Turismo Events" class="h-10 w-auto object-contain">
+        </div>
+        <button type="button" data-close-mobile-nav class="p-1">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M6 18L18 6M6 6l12 12"/>
+          </svg>
+        </button>
+      </div>
+
+      <nav class="py-8 flex flex-col gap-4 text-xs tracking-[0.16em] uppercase font-medium">
+        <a href="#experiences" data-close-mobile-nav class="hover:text-brand-red py-2.5 border-b border-charcoal-100 flex items-center justify-between">
+          <span>Experiences</span>
+          <span>→</span>
+        </a>
+        <a href="#calendar" data-close-mobile-nav class="hover:text-brand-red py-2.5 border-b border-charcoal-100 flex items-center justify-between">
+          <span>Calendar</span>
+          <span>→</span>
+        </a>
+        <a href="#shoppe" data-close-mobile-nav class="hover:text-brand-red py-2.5 border-b border-charcoal-100 flex items-center justify-between">
+          <span class="flex items-center gap-2">
+            <span>Le Shoppe</span>
+            <span class="text-[9px] px-1 bg-brand-red text-white font-bold rounded">New</span>
+          </span>
+          <span>→</span>
+        </a>
+        <a href="#our-story" data-close-mobile-nav class="hover:text-brand-red py-2.5 border-b border-charcoal-100 flex items-center justify-between">
+          <span>Our Story</span>
+          <span>→</span>
+        </a>
+        <a href="#journal" data-close-mobile-nav class="hover:text-brand-red py-2.5 border-b border-charcoal-100 flex items-center justify-between">
+          <span>Journal</span>
+          <span>→</span>
+        </a>
+        <a href="#contact" data-close-mobile-nav class="hover:text-brand-red py-2.5 border-b border-charcoal-100 flex items-center justify-between">
+          <span>Contact</span>
+          <span>→</span>
+        </a>
+      </nav>
+
+      <div class="mt-auto pt-6 border-t border-charcoal-200">
+        <a href="#contact" data-close-mobile-nav class="btn btn-primary btn-sm w-full text-center">
+          Get in Touch
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- JavaScript Engine -->
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

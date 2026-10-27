@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Journey Planner | GRANTURISMO Luxury Tours</title>
+  <meta name="description" content="Plan your bespoke GranTurismo luxury driving journey. Select your destination, supercar preferences, and season for an instant custom itinerary.">
+  
+  <link rel="icon" type="image/png" href="assets/images/granturismo-crest.png">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'brand-red': '#C31A21',
+            'brand-red-dark': '#981016',
+            'charcoal-900': '#111111',
+            'charcoal-800': '#1a1a1a',
+            'charcoal-700': '#262626',
+            'charcoal-500': '#666666',
+            'charcoal-200': '#D6D6D6',
+            'taupe': '#958E83',
+            'linen': '#F6F4F0',
+            'off-white': '#FAFAF8',
+          },
+          fontFamily: {
+            'apris': ['Apris', 'Cormorant Garamond', 'Georgia', 'serif'],
+            'pp-neue-montreal': ['PP Neue Montreal', 'Plus Jakarta Sans', '-apple-system', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="assets/css/main.css">
+</head>
+<body class="font-pp-neue-montreal bg-white text-charcoal-900 min-h-screen flex flex-col justify-between">
+
+  <!-- Header -->
+  <header class="py-4 border-b border-charcoal-200 bg-white sticky top-0 z-50">
+    <div class="max-w-5xl mx-auto px-4 sm:px-8 flex justify-between items-center">
+      <a href="index.html" class="flex items-center" aria-label="Granturismo Home">
+        <img src="assets/images/granturismo-logo.png" alt="Granturismo — Like There Is No Tomorrow" class="h-14 sm:h-16 w-auto object-contain transition-transform duration-300 hover:scale-105 drop-shadow-sm">
+      </a>
+
+      <div class="flex items-center gap-4">
+        <span class="text-xs text-taupe uppercase tracking-wider hidden sm:inline">Concierge Hotline</span>
+        <a href="tel:+41228191800" class="text-xs font-semibold hover:text-brand-red">+41 22 819 1800</a>
+        <a href="index.html" class="text-xs uppercase tracking-wider text-charcoal-500 hover:text-black ml-4">Exit ✕</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Planner Interactive Body -->
+  <main class="py-12 sm:py-16 flex-1 bg-off-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-8">
+      
+      <!-- Progress Bar -->
+      <div class="mb-10 text-center">
+        <span class="text-xs font-semibold tracking-luxury uppercase text-brand-red block mb-2">CUSTOM ITINERARY DESIGNER</span>
+        <h1 class="font-apris text-3xl sm:text-5xl text-charcoal-900 mb-4">Plan Your Journey</h1>
+        <p class="text-xs text-charcoal-500 max-w-lg mx-auto">
+          Complete the 4 steps below to receive an instant bespoke tour dossier and private consultation.
+        </p>
+      </div>
+
+      <div class="bg-white border border-charcoal-200 shadow-xl p-8 sm:p-12">
+        
+        <!-- Step 1: Destination -->
+        <div id="jp-step-1" class="jp-step">
+          <div class="flex justify-between items-center mb-6 border-b border-charcoal-100 pb-3">
+            <h2 class="font-apris text-2xl text-charcoal-900">1. Select Destination</h2>
+            <span class="text-xs font-semibold text-taupe">STEP 1 OF 4</span>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
+            <label class="border border-charcoal-200 p-5 cursor-pointer hover:border-black transition-all flex items-start gap-4 has-[:checked]:border-brand-red has-[:checked]:bg-linen">
+              <input type="radio" name="jp_dest" value="The Alps & Dolomites" checked class="mt-1 accent-brand-red">
+              <div>
+                <strong class="font-apris text-lg block text-charcoal-900">The Alps &amp; Dolomites</strong>
+                <p class="text-xs text-charcoal-500 mt-1">Stelvio, Furka Pass, Lake Como &amp; Cortina d'Ampezzo</p>
+              </div>
+            </label>
+
+            <label class="border border-charcoal-200 p-5 cursor-pointer hover:border-black transition-all flex items-start gap-4 has-[:checked]:border-brand-red has-[:checked]:bg-linen">
+              <input type="radio" name="jp_dest" value="French Riviera & Monaco" class="mt-1 accent-brand-red">
+              <div>
+                <strong class="font-apris text-lg block text-charcoal-900">French Riviera &amp; Monaco</strong>
+                <p class="text-xs text-charcoal-500 mt-1">Route Napoléon, Cannes &amp; Monaco GP Superyacht</p>
+              </div>
+            </label>
+
+            <label class="border border-charcoal-200 p-5 cursor-pointer hover:border-black transition-all flex items-start gap-4 has-[:checked]:border-brand-red has-[:checked]:bg-linen">
+              <input type="radio" name="jp_dest" value="Tuscany & Amalfi Coast" class="mt-1 accent-brand-red">
+              <div>
+                <strong class="font-apris text-lg block text-charcoal-900">Tuscany &amp; Amalfi Coast</strong>
+                <p class="text-xs text-charcoal-500 mt-1">Val d'Orcia cypress drives, Florence &amp; Ravello cliffs</p>
+              </div>
+            </label>
+
+            <label class="border border-charcoal-200 p-5 cursor-pointer hover:border-black transition-all flex items-start gap-4 has-[:checked]:border-brand-red has-[:checked]:bg-linen">
+              <input type="radio" name="jp_dest" value="California & American West" class="mt-1 accent-brand-red">
+              <div>
+                <strong class="font-apris text-lg block text-charcoal-900">California &amp; American West</strong>
+                <p class="text-xs text-charcoal-500 mt-1">Napa Valley estates, Big Sur Highway 1 &amp; Carmel</p>
+              </div>
+            </label>
+          </div>
+
+          <div class="flex justify-end">
+            <button type="button" onclick="nextJpStep(2)" class="btn btn-primary btn-sm">Next Step →</button>
+          </div>
+        </div>
+
+        <!-- Step 2: Touring Format -->
+        <div id="jp-step-2" class="jp-step hidden">
+          <div class="flex justify-between items-center mb-6 border-b border-charcoal-100 pb-3">
+            <h2 class="font-apris text-2xl text-charcoal-900">2. Preferred Touring Format</h2>
+            <span class="text-xs font-semibold text-taupe">STEP 2 OF 4</span>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
+            <label class="border border-charcoal-200 p-5 cursor-pointer hover:border-black transition-all flex items-start gap-4 has-[:checked]:border-brand-red has-[:checked]:bg-linen">
+              <input type="radio" name="jp_format" value="Small Group Tour (Fleet Rotation)" checked class="mt-1 accent-brand-red">
+              <div>
+                <strong class="font-apris text-lg block text-charcoal-900">Small-Group Tour</strong>
+                <p class="text-xs text-charcoal-500 mt-1">Rotate through Ferrari, Porsche, McLaren, Aston Martin with lead car &amp; luggage concierge</p>
+              </div>
+            </label>
+
+            <label class="border border-charcoal-200 p-5 cursor-pointer hover:border-black transition-all flex items-start gap-4 has-[:checked]:border-brand-red has-[:checked]:bg-linen">
+              <input type="radio" name="jp_format" value="Self-Guided Grand Tour" class="mt-1 accent-brand-red">
+              <div>
+                <strong class="font-apris text-lg block text-charcoal-900">Self-Guided Grand Tour</strong>
+                <p class="text-xs text-charcoal-500 mt-1">Independent driving with turn-key GPS and reserved 5-star palatial accommodations</p>
+              </div>
+            </label>
+
+            <label class="border border-charcoal-200 p-5 cursor-pointer hover:border-black transition-all flex items-start gap-4 has-[:checked]:border-brand-red has-[:checked]:bg-linen">
+              <input type="radio" name="jp_format" value="Formula 1 Superyacht & Driving" class="mt-1 accent-brand-red">
+              <div>
+                <strong class="font-apris text-lg block text-charcoal-900">F1 VIP &amp; Superyacht</strong>
+                <p class="text-xs text-charcoal-500 mt-1">Monaco GP trackside yacht hospitality paired with alpine pass supercar tour</p>
+              </div>
+            </label>
+
+            <label class="border border-charcoal-200 p-5 cursor-pointer hover:border-black transition-all flex items-start gap-4 has-[:checked]:border-brand-red has-[:checked]:bg-linen">
+              <input type="radio" name="jp_format" value="100% Bespoke Private Journey" class="mt-1 accent-brand-red">
+              <div>
+                <strong class="font-apris text-lg block text-charcoal-900">Tailor-Made Private</strong>
+                <p class="text-xs text-charcoal-500 mt-1">Custom dates, private aviation, luxury villa estates, private yacht charter</p>
+              </div>
+            </label>
+          </div>
+
+          <div class="flex justify-between">
+            <button type="button" onclick="nextJpStep(1)" class="btn btn-outline btn-sm">← Back</button>
+            <button type="button" onclick="nextJpStep(3)" class="btn btn-primary btn-sm">Next Step →</button>
+          </div>
+        </div>
+
+        <!-- Step 3: Timing -->
+        <div id="jp-step-3" class="jp-step hidden">
+          <div class="flex justify-between items-center mb-6 border-b border-charcoal-100 pb-3">
+            <h2 class="font-apris text-2xl text-charcoal-900">3. Preferred Departure Season</h2>
+            <span class="text-xs font-semibold text-taupe">STEP 3 OF 4</span>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
+            <label class="border border-charcoal-200 p-5 cursor-pointer hover:border-black transition-all flex items-start gap-4 has-[:checked]:border-brand-red has-[:checked]:bg-linen">
+              <input type="radio" name="jp_season" value="Spring 2026 (May – June)" checked class="mt-1 accent-brand-red">
+              <div>
+                <strong class="font-apris text-lg block text-charcoal-900">Spring 2026 (May – June)</strong>
+                <p class="text-xs text-charcoal-500 mt-1">Alpine pass snow-clearing &amp; Monaco Grand Prix season</p>
+              </div>
+            </label>
+
+            <label class="border border-charcoal-200 p-5 cursor-pointer hover:border-black transition-all flex items-start gap-4 has-[:checked]:border-brand-red has-[:checked]:bg-linen">
+              <input type="radio" name="jp_season" value="Summer 2026 (July – August)" class="mt-1 accent-brand-red">
+              <div>
+                <strong class="font-apris text-lg block text-charcoal-900">Summer 2026 (July – August)</strong>
+                <p class="text-xs text-charcoal-500 mt-1">High alpine touring, lake swims, and Mediterranean evenings</p>
+              </div>
+            </label>
+
+            <label class="border border-charcoal-200 p-5 cursor-pointer hover:border-black transition-all flex items-start gap-4 has-[:checked]:border-brand-red has-[:checked]:bg-linen">
+              <input type="radio" name="jp_season" value="Autumn 2026 (September – October)" class="mt-1 accent-brand-red">
+              <div>
+                <strong class="font-apris text-lg block text-charcoal-900">Autumn 2026 (Sept – Oct)</strong>
+                <p class="text-xs text-charcoal-500 mt-1">Wine harvest, vibrant golden foliage &amp; quiet passes</p>
+              </div>
+            </label>
+
+            <label class="border border-charcoal-200 p-5 cursor-pointer hover:border-black transition-all flex items-start gap-4 has-[:checked]:border-brand-red has-[:checked]:bg-linen">
+              <input type="radio" name="jp_season" value="2027 Season" class="mt-1 accent-brand-red">
+              <div>
+                <strong class="font-apris text-lg block text-charcoal-900">2027 Season Priority</strong>
+                <p class="text-xs text-charcoal-500 mt-1">Advance priority allocation for limited departures</p>
+              </div>
+            </label>
+          </div>
+
+          <div class="flex justify-between">
+            <button type="button" onclick="nextJpStep(2)" class="btn btn-outline btn-sm">← Back</button>
+            <button type="button" onclick="nextJpStep(4)" class="btn btn-primary btn-sm">Review &amp; Contact →</button>
+          </div>
+        </div>
+
+        <!-- Step 4: Submission -->
+        <div id="jp-step-4" class="jp-step hidden">
+          <div class="flex justify-between items-center mb-6 border-b border-charcoal-100 pb-3">
+            <h2 class="font-apris text-2xl text-charcoal-900">4. Receive Your Custom Proposal</h2>
+            <span class="text-xs font-semibold text-taupe">FINAL STEP</span>
+          </div>
+
+          <div id="jp-summary-box" class="bg-linen p-6 border border-charcoal-200 mb-8 space-y-2 text-xs">
+            <!-- Dynamically populated -->
+          </div>
+
+          <form data-ajax-form class="space-y-4">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label class="block text-xs font-medium uppercase tracking-wider text-charcoal-700 mb-1">First &amp; Last Name *</label>
+                <input type="text" required placeholder="Lord / Lady / Mr / Ms" class="w-full border border-charcoal-200 px-3.5 py-2.5 text-sm focus:outline-none focus:border-black">
+              </div>
+              <div>
+                <label class="block text-xs font-medium uppercase tracking-wider text-charcoal-700 mb-1">Email Address *</label>
+                <input type="email" required placeholder="you@domain.com" class="w-full border border-charcoal-200 px-3.5 py-2.5 text-sm focus:outline-none focus:border-black">
+              </div>
+            </div>
+
+            <div>
+              <label class="block text-xs font-medium uppercase tracking-wider text-charcoal-700 mb-1">Direct Telephone (for WhatsApp / Call) *</label>
+              <input type="tel" required placeholder="+44 20 7946 0912" class="w-full border border-charcoal-200 px-3.5 py-2.5 text-sm focus:outline-none focus:border-black">
+            </div>
+
+            <div>
+              <label class="block text-xs font-medium uppercase tracking-wider text-charcoal-700 mb-1">Specific Requests or Guest Count</label>
+              <textarea rows="3" placeholder="Tell us if you are celebrating a special milestone, have dietary preferences, or specific supercar requests..." class="w-full border border-charcoal-200 px-3.5 py-2.5 text-sm focus:outline-none focus:border-black"></textarea>
+            </div>
+
+            <div class="flex justify-between items-center pt-4">
+              <button type="button" onclick="nextJpStep(3)" class="btn btn-outline btn-sm">← Back</button>
+              <button type="submit" class="btn btn-primary">
+                Dispatch Proposal Request
+              </button>
+            </div>
+          </form>
+        </div>
+
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="py-6 border-t border-charcoal-200 bg-white text-center text-xs text-charcoal-500">
+    &copy; 2026 GranTurismo Luxury Journeys SA. All rights reserved. Geneva · Monaco · London · New York.
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+  <script>
+    function nextJpStep(step) {
+      document.querySelectorAll('.jp-step').forEach(el => el.classList.add('hidden'));
+      document.getElementById(`jp-step-${step}`).classList.remove('hidden');
+
+      if (step === 4) {
+        const dest = document.querySelector('input[name="jp_dest"]:checked')?.value || 'The Alps & Dolomites';
+        const format = document.querySelector('input[name="jp_format"]:checked')?.value || 'Small Group Tour';
+        const season = document.querySelector('input[name="jp_season"]:checked')?.value || 'Spring 2026';
+
+        document.getElementById('jp-summary-box').innerHTML = `
+          <div class="flex justify-between"><strong class="text-charcoal-900">Destination:</strong> <span>${dest}</span></div>
+          <div class="flex justify-between"><strong class="text-charcoal-900">Touring Format:</strong> <span>${format}</span></div>
+          <div class="flex justify-between"><strong class="text-charcoal-900">Preferred Season:</strong> <span>${season}</span></div>
+          <div class="flex justify-between"><strong class="text-charcoal-900">Fleet:</strong> <span>Ferrari 296, Porsche GT3 RS, McLaren 750S, Aston Martin DB12</span></div>
+        `;
+      }
+    }
+  </script>
+</body>
+</html>
