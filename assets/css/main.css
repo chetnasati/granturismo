@@ -689,6 +689,7 @@ img, video {
   justify-content: space-between;
   border-top: 1px solid var(--color-charcoal-200);
   padding-top: 16px;
+  margin-top: auto;
   font-size: 12px;
   color: var(--color-charcoal-900);
   font-weight: 500;
